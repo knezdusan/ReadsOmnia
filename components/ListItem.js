@@ -98,6 +98,8 @@ const ListItem = ({itemNum, itemsNum, listItemData, dimensions}) => {
   const debouncedHandleMouseEnter = debounce(() => setIsHovered(true), 500);
 
   const handlOnMouseLeave = () => {
+    debounce(() => setIsHovered(true), 500);
+
     setIsHovered(false);
     debouncedHandleMouseEnter.cancel();
 
@@ -166,7 +168,7 @@ const ListItem = ({itemNum, itemsNum, listItemData, dimensions}) => {
 
  
   return (
-    <div className = {styles.list_item_box} onMouseEnter={handlOnMouseEnter(isHovered)} onMouseEnter={debouncedHandleMouseEnter} onMouseLeave={handlOnMouseLeave} ref={itemRef}>
+    <div className = {styles.list_item_box} onMouseEnter={handlOnMouseEnter(isHovered)} onMouseOver={debouncedHandleMouseEnter} onMouseLeave={handlOnMouseLeave} ref={itemRef}>
       <div className = {styles.list_item_top}>
         <div id="cover_box" className = {styles.list_item_cover} >
           <Image alt={`${itemTitle} - book cover`} src={coverUrlSrc} layout="fill" objectFit="cover" placeholder="blur" blurDataURL={coverBlurUrlSrc} />
