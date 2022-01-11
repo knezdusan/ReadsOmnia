@@ -19,9 +19,7 @@ const YouTubeComponent = dynamic(() => import('../../components/YouTube'))
 export default function Title({bookData}) {
 
   if( bookData === void 0){
-    return(
-      <h3>Fetching book data</h3>
-    )
+    console.log("loading the book data");
   }
 
   const router = useRouter();
