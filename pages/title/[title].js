@@ -18,6 +18,12 @@ const YouTubeComponent = dynamic(() => import('../../components/YouTube'))
 
 export default function Title({bookData}) {
 
+  if( bookData === void 0){
+    return(
+      <h3>Fetching book data</h3>
+    )
+  }
+
   const router = useRouter();
   const [curUrl, setCurUrl] = useState("");
 
@@ -253,13 +259,20 @@ export default function Title({bookData}) {
   let metaTitle = bookTitle;
   let bookTitleHasAuthor = false;
 
-  if(authorNamesArray.length > 0){
+  if( bookData === void 0){
+    return(
+      <h1>No data fetched for this book</h1>
+    )
+  }
+
+  if(authorNamesArray != void 0){
     for (let bookAuth of authorNamesArray){
       if(metaTitle.includes(bookAuth)){
         bookTitleHasAuthor = true;
       }
     }
   }
+
 
   if(!bookTitleHasAuthor){
     metaTitle += ` - book by ${authorNamesString}`;
