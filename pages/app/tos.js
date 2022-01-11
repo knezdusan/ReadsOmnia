@@ -12,12 +12,12 @@ export default function Tos() {
         <small>Effective Date of Terms of Use: January 9, 2022</small>
 
         <p>
-          By using this website or ordering any merchandise from ReadsOmnia.com ("ReadsOmnia"), you acknowledge that you have read and understand these terms and conditions of use ("Terms of Use") and agree to be bound by them, to the extent permitted by applicable law. ReadsOmnia retains the right to change or modify these Terms of Use from at its discretion. Please review these Terms of Use to ensure your acceptance. If you do not agree to these Terms of Use, you are not authorized to use this website or to purchase any merchandise from this website.
+          By using this website or ordering any merchandise from ReadsOmnia.com (&quot;ReadsOmnia&quot;), you acknowledge that you have read and understand these terms and conditions of use (&quot;Terms of Use&quot;) and agree to be bound by them, to the extent permitted by applicable law. ReadsOmnia retains the right to change or modify these Terms of Use from at its discretion. Please review these Terms of Use to ensure your acceptance. If you do not agree to these Terms of Use, you are not authorized to use this website or to purchase any merchandise from this website.
         </p>
 
         <p>
           <h2>License</h2>
-          Your use of this website is under a limited license to access and make personal use of this website. This license does not include the right to download (except for page caching), modify, reproduce, or resell any part of the website's content; use any robot, spider, data miner, or other means to extract and gather data from the website; or otherwise use this website or any of its content in any manner other than the manner in which it is intended to be used, unless you first obtain ReadsOmnia's express written consent.
+          Your use of this website is under a limited license to access and make personal use of this website. This license does not include the right to download (except for page caching), modify, reproduce, or resell any part of the website&apos;s content; use any robot, spider, data miner, or other means to extract and gather data from the website; or otherwise use this website or any of its content in any manner other than the manner in which it is intended to be used, unless you first obtain ReadsOmnia&apos;s express written consent.
         </p>
 
         <p>
@@ -42,22 +42,22 @@ export default function Tos() {
 
         <p>
           <h2>Privacy</h2>
-          Please review <Link href="/app/privacy"><a>ReadsOmnia privacy notice</a></Link> to develop an understanding of ReadsOmnia's practices with respect to this important issue. ReadsOmnia privacy notice is part of these Terms of Use and its provisions are incorporated herein by this reference. This website is hosted and operated in the United States, and is not intended to target EU and other non-U.S. residents. If you are accessing this site from outside the United States, use and disclosure laws will generally differ considerably from U.S. laws and requirements. By using this site, you agree and consent to use of your information under these Terms of Use and <Link href="/app/privacy"><a>ReadsOmnia privacy notice</a></Link>.
+          Please review <Link href="/app/privacy"><a>ReadsOmnia privacy notice</a></Link> to develop an understanding of ReadsOmnia&apos;s practices with respect to this important issue. ReadsOmnia privacy notice is part of these Terms of Use and its provisions are incorporated herein by this reference. This website is hosted and operated in the United States, and is not intended to target EU and other non-U.S. residents. If you are accessing this site from outside the United States, use and disclosure laws will generally differ considerably from U.S. laws and requirements. By using this site, you agree and consent to use of your information under these Terms of Use and <Link href="/app/privacy"><a>ReadsOmnia privacy notice</a></Link>.
         </p>
 
         <p>
-          <h2>Children's Online Privacy Protection Act ("COPPA") Notification</h2>
+          <h2>Children&apos;s Online Privacy Protection Act (&quot;COPPA&quot;) Notification</h2>
           This website is not designed or intended for use by children under the age of 18. Pursuant to 47 U.S.C. Section 230(d) as amended, ReadsOmnia hereby notifies you that parental control protections (such as computer hardware, software, or filtering services) are commercially available that may assist you in limiting access to material that is harmful to minors. Information identifying current providers of such protections is available at the Electronic Frontier Foundation website: <a href="https://www.eff.org/">www.eff.org</a>.
         </p>
 
         <p>
           <h2>Trademarks</h2>
-          ReadsOmnia, or third parties from whom ReadsOmnia has permission, own the trademarks or service marks that are used on this website. All rights are reserved. These and other graphics, logos, service marks, trademarks, and trade dress of ReadsOmnia and its licensors may not be used without prior written consent of ReadsOmnia or its licensor, as the case may be. Without limiting the foregoing, no ReadsOmnia trademark or trade dress may be used in connection with any product or service that is not ReadsOmnia's, in any manner that is likely to cause confusion among users, or in any manner that disparages or discredits ReadsOmnia.
+          ReadsOmnia, or third parties from whom ReadsOmnia has permission, own the trademarks or service marks that are used on this website. All rights are reserved. These and other graphics, logos, service marks, trademarks, and trade dress of ReadsOmnia and its licensors may not be used without prior written consent of ReadsOmnia or its licensor, as the case may be. Without limiting the foregoing, no ReadsOmnia trademark or trade dress may be used in connection with any product or service that is not ReadsOmnia&apos;s, in any manner that is likely to cause confusion among users, or in any manner that disparages or discredits ReadsOmnia.
         </p>
 
         <p>
           <h2>Copyright and Other Proprietary Rights</h2>
-          All proprietary content and materials on this website, including, without limitation, this website's layout, organization, and design, are protected by copyrights, trademarks, service marks, patents, trade secrets, and other proprietary rights and laws. You agree to comply with all applicable laws by not copying or using proprietary content, except as allowed by these Terms of Use or by written consent of the owner of the proprietary rights.
+          All proprietary content and materials on this website, including, without limitation, this website&apos;s layout, organization, and design, are protected by copyrights, trademarks, service marks, patents, trade secrets, and other proprietary rights and laws. You agree to comply with all applicable laws by not copying or using proprietary content, except as allowed by these Terms of Use or by written consent of the owner of the proprietary rights.
         </p>
 
         <p>
@@ -67,7 +67,7 @@ export default function Tos() {
 
         <p>
           <h2>Disclaimer of Warranties and Limitation of Liability</h2>
-          THIS WEBSITE AND ALL CONTENT AND SERVICES MADE AVAILABLE THROUGH THIS WEBSITE ARE PROVIDED BY READSOMNIA ON AN "AS IS" AND "AS AVAILABLE" BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.
+          THIS WEBSITE AND ALL CONTENT AND SERVICES MADE AVAILABLE THROUGH THIS WEBSITE ARE PROVIDED BY READSOMNIA ON AN &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; BASIS, WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.
 
           TO THE FULLEST EXTENT PERMITTED BY LAW AND SUBJECT TO THE PARAGRAPH BELOW, READSOMNIA WILL NOT BE LIABLE FOR LOST PROFITS OR ANY DAMAGES, WHETHER DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL, RESULTING FROM YOUR USE OF THIS WEBSITE, ITS CONTENT, OR SERVICES. YOU ASSUME ALL RISKS ASSOCIATED WITH YOUR USE OF THIS WEBSITE, INCLUDING LOSS OF DATA, OR DAMAGE TO YOUR COMPUTER OR OTHER EQUIPMENT. READSOMNIA DOES NOT WARRANT THAT THIS SITE, ITS SERVERS, OR EMAIL SENT FROM THIS SITE ARE FREE FROM VIRUSES OR OTHER HARMFUL EFFECTS.
         </p>

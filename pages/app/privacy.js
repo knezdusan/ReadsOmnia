@@ -12,14 +12,14 @@ export default function Privacy() {
         <small>Effective Date of Privacy Policy: January 9, 2022</small>
 
         <p>
-          Your privacy is important to us. This privacy notice sets forth the privacy policy ("Privacy Policy") of ReadsOmnia, Inc. ("ReadsOmnia") regarding personal information that ReadsOmnia collects, and the ways in which ReadsOmnia uses that personal information. By using this website, you agree to the collection and use of information within the terms of this Privacy Policy. If you do not agree with this Privacy Policy, then do not use this site or give ReadsOmnia any of your information. This Privacy Policy is governed by our <Link href="/app/tos"><a>Terms of Use</a></Link>.
+          Your privacy is important to us. This privacy notice sets forth the privacy policy (&quot;Privacy Policy&quot;) of ReadsOmnia, Inc. (&quot;ReadsOmnia&quot;) regarding personal information that ReadsOmnia collects, and the ways in which ReadsOmnia uses that personal information. By using this website, you agree to the collection and use of information within the terms of this Privacy Policy. If you do not agree with this Privacy Policy, then do not use this site or give ReadsOmnia any of your information. This Privacy Policy is governed by our <Link href="/app/tos"><a>Terms of Use</a></Link>.
         </p>
         
         <p>
           <h2>Definitions</h2>
-          "Service" means all of the services provided by ReadsOmnia, including but not limited to all Content, services, and products available through the Website. ReadsOmnia is not a financial advisor, and all forms of financial advice or financial services are explicitly excluded from the Service.
+          &quot;Service&quot; means all of the services provided by ReadsOmnia, including but not limited to all Content, services, and products available through the Website. ReadsOmnia is not a financial advisor, and all forms of financial advice or financial services are explicitly excluded from the Service.
           <br></br><br></br>
-          "User," “you” and “your” refer to the person, company, or organization that has visited or is using our Website and/or our Service.
+          &quot;User,&quot; “you” and “your” refer to the person, company, or organization that has visited or is using our Website and/or our Service.
         </p>
 
         <p>
