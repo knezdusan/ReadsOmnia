@@ -18,10 +18,10 @@ export default function Footer() {
         <div className={styles.space}> </div>
         <div className={styles.social_box}>
           <span>Reach out: </span>
-          <a href="https://www.linkedin.com/company/ReadsOmnia/" title="ReadsOmnia LinkedIn Page" target="_blank"><LinkedIn /></a>
-          <a href="https://twitter.com/ReadsOmnia" title="ReadsOmnia Twitter Page" target="_blank"><Twitter /></a>
-          <a href="https://www.facebook.com/ReadsOmnia/" title="ReadsOmnia Facebook Page" target="_blank"><Facebook /></a>
-          <a href="mailto:readsomnia@gmail.com?subject=&body=" title="ReadsOmnia contact email" target="_blank"><Email /></a>
+          <a href="https://www.linkedin.com/company/ReadsOmnia/" title="ReadsOmnia LinkedIn Page" target="_blank" rel="noopener noreferrer"><LinkedIn /></a>
+          <a href="https://twitter.com/ReadsOmnia" title="ReadsOmnia Twitter Page" target="_blank" rel="noopener noreferrer"><Twitter /></a>
+          <a href="https://www.facebook.com/ReadsOmnia/" title="ReadsOmnia Facebook Page" target="_blank" rel="noopener noreferrer"><Facebook /></a>
+          <a href="mailto:readsomnia@gmail.com?subject=&body=" title="ReadsOmnia contact email" target="_blank" rel="noopener noreferrer"><Email /></a>
         </div>
       </div>
     </div>
