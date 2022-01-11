@@ -253,9 +253,11 @@ export default function Title({bookData}) {
   let metaTitle = bookTitle;
   let bookTitleHasAuthor = false;
 
-  for (let bookAuth of authorNamesArray){
-    if(metaTitle.includes(bookAuth)){
-      bookTitleHasAuthor = true;
+  if(authorNamesArray.length > 0){
+    for (let bookAuth of authorNamesArray){
+      if(metaTitle.includes(bookAuth)){
+        bookTitleHasAuthor = true;
+      }
     }
   }
 
