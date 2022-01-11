@@ -15,7 +15,7 @@ export default function Layout({ children }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isToTop, setIsToTop] = useState(false);
 
-  useEffect(() => {
+  useEffect((toTopHeight) => {
     const scroll = () => {
        setIsScrolled(window.scrollY < 50 ? false : true);
        setIsToTop(window.scrollY < toTopHeight ? false : true);
