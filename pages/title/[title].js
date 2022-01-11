@@ -18,10 +18,6 @@ const YouTubeComponent = dynamic(() => import('../../components/YouTube'))
 
 export default function Title({bookData}) {
 
-  if( bookData === void 0){
-    console.log("loading the book data");
-  }
-
   const router = useRouter();
   const [curUrl, setCurUrl] = useState("");
 
@@ -32,6 +28,12 @@ export default function Title({bookData}) {
 
     setCurUrl(`${baseUrl}${router.asPath}`);
   }, [router.asPath]);
+
+  if( bookData === void 0){
+    return(
+      <div style={{textAlign:"center"}}>Fetching book data...</div>
+    )
+  }
 
   // Main data blocks
   const mainData = bookData["book_data"][0];
