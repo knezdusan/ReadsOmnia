@@ -1,0 +1,26 @@
+
+.tos{
+  padding-top: 80px;
+
+  @media only screen and (max-width: 1275px) {
+    padding-top: initial;
+  }
+}
+.tos_box{
+  width: 850px;
+  max-width: 850px;
+  padding: 3rem;
+  margin: auto;
+  margin-bottom: 20px;
+  background-color: var(--lbck);
+
+  @media only screen and (max-width: 850px) {
+    width: initial;
+    padding: 2rem 1rem;
+  }
+
+  h2{
+    font-size: 1.3rem;
+    margin-top: 2rem;
+  }
+}

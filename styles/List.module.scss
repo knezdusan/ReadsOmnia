@@ -1,0 +1,42 @@
+.list_box{
+  width: 100%;
+  margin-top: 25px;
+
+  .list_name{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-left: 50px;
+  }
+
+  .list{
+    position: relative;
+    margin-top: 15px;
+
+    .sliderArrow{
+      position: absolute;
+      width: 50px;
+      height: 100%;
+      background-color: rgba(22,22,22,0.5);
+      z-index: 10;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      cursor: pointer;
+
+      &.left{
+        left: 0;
+      }
+
+      &.right{
+        right: 0;
+      }
+    }
+
+    .list_wrapper{
+      display: flex;
+      margin-left: 50px;
+      transform: translateX(0px);
+      transition: all 0.8s ease;
+    }
+  }
+}
