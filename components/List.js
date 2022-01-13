@@ -10,9 +10,9 @@ const List = ({listName, listData}) => {
   const [slideNumber, setSlideNumber]= useState(1);
   const [isTransitioned, setIsTransitioned] = useState(true);
 
-  useEffect(() => console.log(slideNumber), [slideNumber]);
-
   const listRef = useRef();
+  const listLeft = useRef();
+  const listRight = useRef();
 
   const { screenHeight, screenWidth } = useWindowDimensions();
   // console.log(screenHeight, screenWidth);
@@ -43,7 +43,8 @@ const List = ({listName, listData}) => {
   const realScreenWidth = screenWidth - 50;  // to exclude the left padding - 1230
   const realScreenWidth2 = screenWidth - 100;  // to exclude both padings - 1180
   const realCoverWidth = coverWidth + 10;   // to include the right margin - 240
-  const visibleCovers = Math.floor(realScreenWidth2/realCoverWidth);  // 1180 / 240 = 4
+  let visibleCovers = Math.floor(realScreenWidth2/realCoverWidth);  // 1180 / 240 = 4
+  if(visibleCovers === 1) visibleCovers = 2;
   console.log('visibleCovers:', visibleCovers);
 
   const sliderWidth = visibleCovers * realCoverWidth; // 4 * 240 = 960
@@ -112,17 +113,35 @@ const List = ({listName, listData}) => {
     handleTransition();
   }
 
+
+  useEffect(() => {
+    if(slideNumber === 1){
+      listLeft.current.style.visibility = `hidden`;
+    }
+    else{
+      listLeft.current.style.visibility = `visible`;
+    }
+
+    if(slideNumber === slidersNumber - 1){
+      listRight.current.style.visibility = `hidden`;
+    }
+    else{
+      listRight.current.style.visibility = `visible`;
+    }
+  },[slideNumber]);
+
+
   let counter = 1;
 
   return (
     <div className = {styles.list_box}>
       <div className = {styles.list_name}>{listNames[listName]}</div>
       <div className = {styles.list}>
-        <ArrowBackIosOutlined className={[styles.sliderArrow, styles.left].join(" ")} onClick={isTransitioned ? () => handleClick("left") : console.log("transitioning")} />
+        <ArrowBackIosOutlined className={[styles.sliderArrow, styles.left].join(" ")} onClick={isTransitioned ? () => handleClick("left") : console.log("transitioning")} ref={listLeft}/>
         <div className = {styles.list_wrapper} ref={listRef}>
           {listData.map((listItem) => <ListItem itemNum={counter++} itemsNum={visibleCovers} key={listItem.bid} listItemData={listItem} dimensions={dimensions} /> )}
         </div>
-        <ArrowForwardIosOutlined className={[styles.sliderArrow, styles.right].join(" ")} onClick={isTransitioned ? () => handleClick("right") : console.log("transitioning")} />
+        <ArrowForwardIosOutlined className={[styles.sliderArrow, styles.right].join(" ")} onClick={isTransitioned ? () => handleClick("right") : console.log("transitioning")} ref={listRight}/>
       </div>
     </div>
   )

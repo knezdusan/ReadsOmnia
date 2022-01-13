@@ -62,7 +62,7 @@ const ListItem = ({itemNum, itemsNum, listItemData, dimensions}) => {
       setIsLast(false);
     }
 
-    console.log(isFirst, isLast);
+    // console.log(isFirst, isLast);
   },[isHovered]);
   
   
