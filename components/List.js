@@ -15,6 +15,7 @@ const List = ({listName, listData}) => {
   const listRef = useRef();
 
   const { screenHeight, screenWidth } = useWindowDimensions();
+  console.log(screenHeight, screenWidth);
 
 
   // Posible cover widths - intrinsic: 300 x 450
