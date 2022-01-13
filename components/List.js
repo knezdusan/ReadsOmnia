@@ -10,7 +10,7 @@ const List = ({listName, listData}) => {
   const [slideNumber, setSlideNumber]= useState(1);
   const [isTransitioned, setIsTransitioned] = useState(true);
 
-  // useEffect(() => console.log(slideNumber), [slideNumber]);
+  useEffect(() => console.log(slideNumber), [slideNumber]);
 
   const listRef = useRef();
 
@@ -19,8 +19,13 @@ const List = ({listName, listData}) => {
 
 
   // Posible cover widths - intrinsic: 300 x 450
-  const coverWidth = 230;
-  const coverHeight = 345;
+  const coverWidth = 130;
+  const coverHeight = 195;
+
+  if(screenWidth >= 460){
+    coverWidth = 230;
+    coverHeight = 345;
+  }
 
   if(screenWidth >= 1500){
     coverWidth = 250;
@@ -39,6 +44,7 @@ const List = ({listName, listData}) => {
   const realScreenWidth2 = screenWidth - 100;  // to exclude both padings - 1180
   const realCoverWidth = coverWidth + 10;   // to include the right margin - 240
   const visibleCovers = Math.floor(realScreenWidth2/realCoverWidth);  // 1180 / 240 = 4
+  console.log('visibleCovers:', visibleCovers);
 
   const sliderWidth = visibleCovers * realCoverWidth; // 4 * 240 = 960
   const sliderWidthHolder = sliderWidth; // 4 * 240 = 960

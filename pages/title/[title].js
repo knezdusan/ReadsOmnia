@@ -13,7 +13,7 @@ import Person from "@material-ui/icons/Person";
 import ArrowBack from "@material-ui/icons/ArrowBack";
 
 import dynamic from 'next/dynamic';
-const YouTubeComponent = dynamic(() => import('../../components/YouTube'))
+const YouTubeComponent = dynamic(() => import('../../components/lib/YouTube'))
 
 
 export default function Title({bookData}) {

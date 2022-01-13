@@ -14,6 +14,7 @@ const ListItem = ({itemNum, itemsNum, listItemData, dimensions}) => {
 
   const [isHovered, setIsHovered] = useState(false);
   const [isFirst, setIsFirst] = useState(false);
+  const [isLast, setIsLast] = useState(false);
 
   const itemRef = useRef();
 
@@ -46,12 +47,22 @@ const ListItem = ({itemNum, itemsNum, listItemData, dimensions}) => {
 
   // Item distnace from the right side of screen
   useEffect(() => {
-    if(itemRef.current.getBoundingClientRect().x < 100){
+    if(itemNum == 1){
+      setIsFirst(true);
+      setIsLast(false);
+    }
+    else if (itemNum % itemsNum === 0){
+      setIsLast(true);
+    }
+    else if ((itemNum -1) % itemsNum === 0){
       setIsFirst(true);
     }
     else{
       setIsFirst(false);
-    };
+      setIsLast(false);
+    }
+
+    console.log(isFirst, isLast);
   },[isHovered]);
   
   
@@ -126,31 +137,35 @@ const ListItem = ({itemNum, itemsNum, listItemData, dimensions}) => {
 
       // handle image shrink and display on responsive
       if(screenWidth < 460){
-        itemRef.current.style.minWidth = `250px`;
+        itemRef.current.style.minWidth = `267px`;
         itemRef.current.style.marginRight = `-${itemWidth-3}px`;
 
         itemRef.current.children[0].children[0].style.display = "none";
       }
       else{
         // extend item area
-        itemRef.current.style.minWidth = `${itemHoverWidth}px`;
-        itemRef.current.style.marginRight = `-${itemWidth-3}px`;
+        itemRef.current.style.minWidth = `${itemHoverWidth+3}px`;
+        itemRef.current.style.marginRight = `-${itemWidth}px`;
       }
 
       itemRef.current.style.zIndex = "99";
       
-      itemRef.current.children[0].children[0].style.width = "170px";
-      itemRef.current.children[0].children[0].style.minWidth = "170px";
-      itemRef.current.children[0].children[0].style.height = "255px";
+      itemRef.current.children[0].children[0].style.width = "130px";
+      itemRef.current.children[0].children[0].style.minWidth = "130px";
+      itemRef.current.children[0].children[0].style.height = "195px";
 
       // lighter background
       itemRef.current.style.backgroundColor = `#212121`;
       itemRef.current.style.boxShadow = `0 2px 15px #000000`;
       
 
-      // if last item in viewport, shift it to left so all content is displayed
+      // if the first item in current viewport, dont shirt the info box
+      // if last slide, shirt it to the right to make it fully visible
       if(isFirst){
         itemRef.current.style.left = `1px`;
+      }
+      else if(isLast){
+        itemRef.current.style.left = `-${itemWidth + 8}px`;
       }
       else{
         itemRef.current.style.left = `-${leftOffset}px`;
@@ -168,7 +183,7 @@ const ListItem = ({itemNum, itemsNum, listItemData, dimensions}) => {
 
  
   return (
-    <div className = {styles.list_item_box} onMouseEnter={handlOnMouseEnter(isHovered)} onMouseOver={debouncedHandleMouseEnter} onMouseLeave={handlOnMouseLeave} ref={itemRef}>
+    <div className = {styles.list_item_box} data-index={itemNum} onMouseEnter={handlOnMouseEnter(isHovered)} onMouseOver={debouncedHandleMouseEnter} onMouseLeave={handlOnMouseLeave} ref={itemRef}>
       <div className = {styles.list_item_top}>
         <div id="cover_box" className = {styles.list_item_cover} >
           <Image alt={`${itemTitle} - book cover`} src={coverUrlSrc} layout="fill" objectFit="cover" placeholder="blur" blurDataURL={coverBlurUrlSrc} />

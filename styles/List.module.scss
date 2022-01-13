@@ -6,6 +6,10 @@
     font-size: 1.5rem;
     font-weight: 500;
     margin-left: 50px;
+
+    @media only screen and (max-width: 460px) {
+      font-size: 1.2rem;;
+    }
   }
 
   .list{
