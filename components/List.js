@@ -10,7 +10,7 @@ const List = ({listName, listData}) => {
   const [slideNumber, setSlideNumber]= useState(1);
   const [isTransitioned, setIsTransitioned] = useState(true);
 
-  useEffect(() => console.log(slideNumber), [slideNumber]);
+  // useEffect(() => console.log(slideNumber), [slideNumber]);
 
   const listRef = useRef();
 
@@ -88,10 +88,6 @@ const List = ({listName, listData}) => {
   const handleClick = (direction) => {
 
     const leftDistance = listRef.current.getBoundingClientRect().x - 50;
-    
-    console.log('--------------------------');
-    console.log('leftDistance:', leftDistance);
- 
 
     if(direction === "left" && slideNumber > 1){
       setSlideNumber(slideNumber - 1);
@@ -100,7 +96,6 @@ const List = ({listName, listData}) => {
     }
 
     if(direction === "right" && slideNumber < slidersNumber){
-      console.log(leftDistance + "...");
       setSlideNumber(slideNumber + 1);
       if(slideNumber === slidersNumber - 1){ sliderWidth = sliderWidthLast}else{ sliderWidth = sliderWidthHolder }
       listRef.current.style.transform = `translateX(${(0 - sliderWidth) + leftDistance}px)`;
@@ -108,8 +103,6 @@ const List = ({listName, listData}) => {
 
     setIsTransitioned(false);
     handleTransition();
-
-    console.log(slideNumber, screenWidth, coverWidth, visibleCovers, sliderWidth, leftDistance, slidersNumber, sliderReminder, sliderWidthLast);
   }
 
   let counter = 1;
