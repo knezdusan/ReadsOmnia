@@ -20,7 +20,7 @@ export default function Home({listsData}) {
       <Head>
         <title>ReadsOmnia - Fiction & Non-Fiction Must-Read Books at One Spot</title>
 
-        <meta name="description" content="Top bestsellers, new and trending fiction and non-fiction books, Critically acclaimed & Award-winning titles, Community recommendations Must-Reads  | ReadsOmnia" />
+        <meta name="description" content="Top bestsellers, new and trending fiction and non-fiction books, Critically acclaimed & Award-winning titles, Community recommendation Must-Reads  | ReadsOmnia" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
