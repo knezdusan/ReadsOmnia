@@ -18,11 +18,28 @@ export default function Home({listsData}) {
   return (
     <>
       <Head>
-        <title>ReadsOmnia - Your Next Read Must-read Books Library</title>
-        <meta
-          name="description"
-          content="Top bestsellers, new fiction and non-fiction blockbusters, Critically acclaimed & Award winners books, Community recommendations Must Reads,  Global and Indi publishers top picks  | ReadsOmnia"
-        />
+        <title>ReadsOmnia - Fiction & Non-Fiction Must-Read Books at One Spot</title>
+
+        <meta name="description" content="Top bestsellers, new and trending fiction and non-fiction books, Critically acclaimed & Award-winning titles, Community recommendations Must-Reads  | ReadsOmnia" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="📓 ReadsOmnia - Fiction & Non-Fiction Must-Read Books at One Spot" />
+        <meta name="twitter:description" content="Top bestsellers, new and trending fiction and non-fiction books, Critically acclaimed & Award-winning titles, Community recommendations Must-Reads  | ReadsOmnia" />
+        <meta name="twitter:site" content="@readsomnia" />
+        <meta name="twitter:creator" content="@readsomnia" />
+        <meta name="twitter:image" content="/readsomnia-og.jpg" />
+
+        {/* Open Graph general (Facebook, Pinterest) */}
+        <meta property="og:title" content="📓 ReadsOmnia - Fiction & Non-Fiction Must-Read Books at One Spot" />
+        <meta property="og:description" content="Top bestsellers, new and trending fiction and non-fiction books, Critically acclaimed & Award-winning titles, Community recommendations Must-Reads  | ReadsOmnia" />
+        <meta property="og:url" content="https://readsomnia.com" />
+        <meta property="og:site_name" content="readsomnia.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/readsomnia-og.jpg" />
+
+        {/* Emoji SVG favicon */}
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📓</text></svg>" />
       </Head>
 
       <div className={styles.main_content}>

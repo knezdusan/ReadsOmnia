@@ -306,13 +306,26 @@ export default function Title({bookData}) {
   return (
     <>
       <Head>
-        <title>{metaTitle}</title>
-        <meta name="description" content={metaDescription}/>
 
-        <meta property='og:title' content={metaTitle}/>
-        <meta property='og:image' content={coverUrlSrc}/>
-        <meta property='og:description' content={metaDescription}/>
+        <title>{metaTitle}</title>
+        <meta name="description" content={metaDescription} />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={metaTitle}/>
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:site" content="@readsomnia" />
+        <meta name="twitter:creator" content="@readsomnia" />
+        <meta name="twitter:image" content={coverUrlSrc}/>
+
+        {/* Open Graph general (Facebook, Pinterest) */}
+        <meta property='og:title' content={metaTitle} />
+        <meta property='og:description' content={metaDescription} />
         <meta property='og:url' content={curUrl} />
+        <meta property="og:site_name" content="readsomnia.com" />
+        <meta property='og:type' content='website' />
+        <meta property='og:image' content={coverUrlSrc} />
+
       </Head>
       
       <div className={styles.main_content}>
