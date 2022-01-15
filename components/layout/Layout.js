@@ -30,6 +30,8 @@ export default function Layout({ children }) {
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Special+Elite&display=swap" rel="stylesheet" />
 
         <link rel="icon" href="/favicon.ico" />
+
+        <meta name="facebook-domain-verification" content="yvkpoq3pofwgh5khve8yr37cowzgcc" />
       </Head>
       <Navbar isScrolled={isScrolled}/>
       <main>{children}</main>
