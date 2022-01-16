@@ -116,17 +116,17 @@ const List = ({listName, listData}) => {
 
   useEffect(() => {
     if(slideNumber === 1){
-      listLeft.current.style.visibility = `hidden`;
+      listLeft.current.children[0].style.visibility = `hidden`;
     }
     else{
-      listLeft.current.style.visibility = `visible`;
+      listLeft.current.children[0].style.visibility = `visible`;
     }
 
-    if(slideNumber === slidersNumber - 1){
-      listRight.current.style.visibility = `hidden`;
+    if(slideNumber === slidersNumber){
+      listRight.current.children[0].style.visibility = `hidden`;
     }
     else{
-      listRight.current.style.visibility = `visible`;
+      listRight.current.children[0].style.visibility = `visible`;
     }
   },[slideNumber]);
 
@@ -137,11 +137,11 @@ const List = ({listName, listData}) => {
     <div className = {styles.list_box}>
       <div className = {styles.list_name}>{listNames[listName]}</div>
       <div className = {styles.list}>
-        <ArrowBackIosOutlined className={[styles.sliderArrow, styles.left].join(" ")} onClick={isTransitioned ? () => handleClick("left") : console.log("transitioning")} ref={listLeft}/>
+        <ArrowBackIosOutlined className={[styles.sliderArrow, styles.left].join(" ")} onClick={isTransitioned ? () => handleClick("left") : null} ref={listLeft}/>
         <div className = {styles.list_wrapper} ref={listRef}>
           {listData.map((listItem) => <ListItem itemNum={counter++} itemsNum={visibleCovers} key={listItem.bid} listItemData={listItem} dimensions={dimensions} /> )}
         </div>
-        <ArrowForwardIosOutlined className={[styles.sliderArrow, styles.right].join(" ")} onClick={isTransitioned ? () => handleClick("right") : console.log("transitioning")} ref={listRight}/>
+        <ArrowForwardIosOutlined className={[styles.sliderArrow, styles.right].join(" ")} onClick={isTransitioned ? () => handleClick("right") : null} ref={listRight}/>
       </div>
     </div>
   )

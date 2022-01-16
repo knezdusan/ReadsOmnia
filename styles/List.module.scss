@@ -29,7 +29,10 @@
 
       &.left{
         left: 0;
-        visibility: hidden;
+        // visibility: hidden;
+        path{
+          border:2px solid red;
+        }
       }
 
       &.right{
