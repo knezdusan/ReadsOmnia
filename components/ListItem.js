@@ -126,7 +126,7 @@ const ListItem = ({itemNum, itemsNum, listItemData, dimensions}) => {
 
     // extend item area
     itemRef.current.style.minWidth = `${itemWidth}px`;
-    itemRef.current.style.marginRight = "10px";
+    itemRef.current.style.marginRight = "15px";
     itemRef.current.style.left = "0px";
   }
 
@@ -137,14 +137,14 @@ const ListItem = ({itemNum, itemsNum, listItemData, dimensions}) => {
 
       // handle image shrink and display on responsive
       if(screenWidth < 460){
-        itemRef.current.style.minWidth = `267px`;
-        itemRef.current.style.marginRight = `-${itemWidth-3}px`;
+        itemRef.current.style.minWidth = `275px`;
+        itemRef.current.style.marginRight = `-${itemWidth}px`;
 
         itemRef.current.children[0].children[0].style.display = "none";
       }
       else{
         // extend item area
-        itemRef.current.style.minWidth = `${itemHoverWidth+3}px`;
+        itemRef.current.style.minWidth = `${itemHoverWidth+8}px`;
         itemRef.current.style.marginRight = `-${itemWidth}px`;
       }
 
@@ -159,13 +159,13 @@ const ListItem = ({itemNum, itemsNum, listItemData, dimensions}) => {
       itemRef.current.style.boxShadow = `0 2px 15px #000000`;
       
 
-      // if the first item in current viewport, dont shirt the info box
+      // if the first item in current viewport, dont shift the info box
       // if last slide, shirt it to the right to make it fully visible
       if(isFirst){
         itemRef.current.style.left = `1px`;
       }
       else if(isLast){
-        itemRef.current.style.left = `-${itemWidth + 8}px`;
+        itemRef.current.style.left = `-${itemWidth + 13}px`;
       }
       else{
         itemRef.current.style.left = `-${leftOffset}px`;

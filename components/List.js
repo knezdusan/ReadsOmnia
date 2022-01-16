@@ -42,7 +42,7 @@ const List = ({listName, listData}) => {
   // eg 1280 x 720
   const realScreenWidth = screenWidth - 50;  // to exclude the left padding - 1230
   const realScreenWidth2 = screenWidth - 100;  // to exclude both padings - 1180
-  const realCoverWidth = coverWidth + 10;   // to include the right margin - 240
+  const realCoverWidth = coverWidth + 15;   // to include the right margin - 240
   let visibleCovers = Math.floor(realScreenWidth2/realCoverWidth);  // 1180 / 240 = 4
   if(visibleCovers === 1) visibleCovers = 2;
   // console.log('visibleCovers:', visibleCovers);

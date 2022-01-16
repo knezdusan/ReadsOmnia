@@ -1,7 +1,7 @@
 .list_item_box{
   display: flex;
   flex-direction: column;
-  margin-right: 10px;
+  margin-right: 15px;
   border-radius: 5px;
   position: relative;
 
@@ -16,6 +16,7 @@
 
   .list_item_top{
     display: flex;
+    box-shadow: 0px 0px 20px black;
 
     .list_item_cover{
       position: relative;
@@ -107,6 +108,9 @@
     display: flex;
     align-items: center;
     padding: 1rem;
+    padding-top: 0.5rem;
+    height: 100%;
+
 
     @media only screen and (max-width: 460px) {
       padding-bottom: 2.5rem;
