@@ -186,7 +186,7 @@ const ListItem = ({itemNum, itemsNum, listItemData, dimensions}) => {
     <div className = {styles.list_item_box} data-index={itemNum} onMouseEnter={handlOnMouseEnter(isHovered)} onMouseOver={debouncedHandleMouseEnter} onMouseLeave={handlOnMouseLeave} ref={itemRef}>
       <div className = {styles.list_item_top}>
         <div id="cover_box" className = {styles.list_item_cover} >
-          <Image alt={`${itemTitle} - book cover`} src={coverUrlSrc} layout="fill" objectFit="cover" placeholder="blur" blurDataURL={coverBlurUrlSrc} />
+          <Image unoptimized={true} alt={`${itemTitle} - book cover`} src={coverUrlSrc} layout="fill" objectFit="cover" placeholder="blur" blurDataURL={coverBlurUrlSrc} />
         </div>
         {
           isHovered ?

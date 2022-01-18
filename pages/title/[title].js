@@ -73,7 +73,7 @@ export default function Title({bookData}) {
         <div className={styles.author_box} key={authorObj.aid}>
           <Link href={authorAmazonUrl}>
             <a className={styles.author_img}>
-              <Image alt={`${authorName} - ${mainData} author`} src={authorImgSrc} width={65} height={65} />
+              <Image unoptimized={true} alt={`${authorName} - ${mainData} author`} src={authorImgSrc} width={65} height={65} />
               <div className={styles.author_name}>{authorName}</div>
             </a>
           </Link>
@@ -228,7 +228,7 @@ export default function Title({bookData}) {
       return (
         <Link href={rlBookUrl} key={relatedObj.bid}>
           <a className={styles.rl_book_cover}>
-            <Image alt={`${rlTitle} book cover`} src={rCoverUrlSrc} width={230} height={345} placeholder="blur" blurDataURL={rCoverBlurUrlSrc} />
+            <Image unoptimized={true} alt={`${rlTitle} book cover`} src={rCoverUrlSrc} width={230} height={345} placeholder="blur" blurDataURL={rCoverBlurUrlSrc} />
           </a>
         </Link>
       );
@@ -337,7 +337,7 @@ export default function Title({bookData}) {
             <section className={styles.title_top}>
               <div className = {styles.title_info_left}>
                 <div id="cover_box" className = {styles.title_cover} >
-                  <Image alt={`${mainData.title} - book cover`} src={coverUrlSrc} layout="fill" objectFit="cover" placeholder="blur" blurDataURL={coverBlurUrlSrc} priority />
+                  <Image unoptimized={true} alt={`${mainData.title} - book cover`} src={coverUrlSrc} layout="fill" objectFit="cover" placeholder="blur" blurDataURL={coverBlurUrlSrc} priority />
                 </div>
                 <div className = {styles.title_rating}><Rating rating={mainData.rating}/></div>
                 <div className = {styles.title_genres}>
@@ -403,9 +403,6 @@ export async function getStaticPaths() {
 
 
 export async function getStaticProps({params}) {
-
-  // const router = useRouter();
-  // const { title } = router.query;
 
   const title = params.title; // like tom-clancy-chain-of-command-a-jack-ryan-novel_1296
 
