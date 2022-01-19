@@ -151,6 +151,8 @@ const listsArray = {
 
 export default function ListPage({listData}) {
 
+  const router = useRouter();
+
   if( listData === void 0){
     console.log('listData: -----------> ', JSON.stringify(listData));
     return(
@@ -158,13 +160,10 @@ export default function ListPage({listData}) {
     )
   }
 
-
-  const router = useRouter();
   const curListSlug = router.asPath.replace("/list/",""); // like: /list/top-charts-bestsellers
   const curListTitle = listsArray[curListSlug][0];
   const curListMetaTitle = listsArray[curListSlug][1];
   const curListMetaDescription = listsArray[curListSlug][2];
-
 
   const featuredData = {
     page: "frontpage",

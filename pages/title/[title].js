@@ -18,14 +18,6 @@ const YouTubeComponent = dynamic(() => import('../../components/lib/YouTube'))
 
 export default function Title({bookData}) {
 
-  if( bookData === void 0){
-    console.log('listData: -----------> ', JSON.stringify(listData));
-    return(
-      <div style={{textAlign:"center", paddingTip:"100px",}}>Fetching list data...</div>
-    )
-  }
-
-
   const router = useRouter();
   const [curUrl, setCurUrl] = useState("");
 
@@ -36,6 +28,14 @@ export default function Title({bookData}) {
 
     setCurUrl(`${baseUrl}${router.asPath}`);
   }, [router.asPath]);
+
+
+  if( bookData === void 0){
+    console.log('listData: -----------> ', JSON.stringify(listData));
+    return(
+      <div style={{textAlign:"center", paddingTip:"100px",}}>Fetching list data...</div>
+    )
+  }
 
 
   // Main data blocks
