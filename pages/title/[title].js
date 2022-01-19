@@ -18,6 +18,14 @@ const YouTubeComponent = dynamic(() => import('../../components/lib/YouTube'))
 
 export default function Title({bookData}) {
 
+  if( bookData === void 0){
+    console.log('listData: -----------> ', JSON.stringify(listData));
+    return(
+      <div style={{textAlign:"center", paddingTip:"100px",}}>Fetching list data...</div>
+    )
+  }
+
+
   const router = useRouter();
   const [curUrl, setCurUrl] = useState("");
 
@@ -29,11 +37,6 @@ export default function Title({bookData}) {
     setCurUrl(`${baseUrl}${router.asPath}`);
   }, [router.asPath]);
 
-  if( bookData === void 0){
-    return(
-      <div style={{textAlign:"center"}}>Fetching book data...</div>
-    )
-  }
 
   // Main data blocks
   const mainData = bookData["book_data"][0];
@@ -398,7 +401,7 @@ export async function getStaticPaths() {
     params: { title: btitle },
   }))
 
-  return { paths, fallback: true }
+  return { paths, fallback: false }
 }
 
 
@@ -424,7 +427,18 @@ export async function getStaticProps({params}) {
       }
     )
 
+    if (!data) {
+      return {
+        notFound: true,
+      }
+    }
+
     bookData = data;
+  }
+  else{
+    return {
+      notFound: true,
+    }
   }
 
   // const dataJson = await import('../public/data.json');
@@ -434,5 +448,6 @@ export async function getStaticProps({params}) {
     props: {
       bookData: bookData || [],
     },
+    revalidate: 10800,  // 3 hours
   };
 }

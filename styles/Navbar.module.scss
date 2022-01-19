@@ -31,8 +31,13 @@
       margin-right: 40px;
     }
     
-    span{
+    a{
       margin-right: 20px;
+      color: white !important;
+
+      &:hover{
+        color: #a0a0f0 !important;
+      }
     }
   }
 

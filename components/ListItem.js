@@ -10,7 +10,7 @@ import InfoOutlined from "@material-ui/icons/InfoOutlined";
 
 
 
-const ListItem = ({itemNum, itemsNum, listItemData, dimensions}) => {
+const ListItem = ({page, itemNum, itemsNum, listItemData, dimensions}) => {
 
   const [isHovered, setIsHovered] = useState(false);
   const [isFirst, setIsFirst] = useState(false);
@@ -137,14 +137,15 @@ const ListItem = ({itemNum, itemsNum, listItemData, dimensions}) => {
 
       // handle image shrink and display on responsive
       if(screenWidth < 460){
-        itemRef.current.style.minWidth = `275px`;
+
+        page === "front" ? itemRef.current.style.minWidth = `275px` : itemRef.current.style.maxWidth = `275px`;
         itemRef.current.style.marginRight = `-${itemWidth}px`;
 
         itemRef.current.children[0].children[0].style.display = "none";
       }
       else{
         // extend item area
-        itemRef.current.style.minWidth = `${itemHoverWidth+8}px`;
+        page === "front" ? itemRef.current.style.minWidth = `${itemHoverWidth+8}px` : itemRef.current.style.maxWidth = `${itemHoverWidth+8}px`;
         itemRef.current.style.marginRight = `-${itemWidth}px`;
       }
 

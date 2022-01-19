@@ -33,11 +33,12 @@ export default function Navbar({isScrolled}) {
             <a className={styles.main_logo}><Image  src={logoPic} alt="ReadsOmnia logo" priority /></a>
         </Link>
         <div className={styles.main_nav} ref={hamburgerRef}>
-          <span>Top of Charts</span>
-          <span>Trending Now</span>
-          <span>Critically Acclaimed</span>
-          <span>Recently Added</span>
-          <span>All-Timers</span>
+          <Link href="/list/top-charts-bestsellers"><a>Top of Charts</a></Link>
+          <Link href="/list/top-trending-bestsellers"><a>Trending Now</a></Link>
+          <Link href="/list/critically-acclaimed-bestsellers"><a>Critically Acclaimed</a></Link>
+          <Link href="/list/new-fiction-bestsellers"><a>Recently Added</a></Link>
+          <Link href="/list/all-time-bestsellers"><a>All-Timers</a></Link>
+
           <Close className={styles.close_menu} onClick={hamburgerClick}/>
         </div>
       </div>

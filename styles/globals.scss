@@ -27,3 +27,15 @@ a {
   box-sizing: border-box;
 }
 
+.not-found{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30vh;
+  background-image: url(/readsomnia-bck.jpg);
+  background-attachment: fixed;
+  background-position: 50%;
+  background-size: cover;
+}
+

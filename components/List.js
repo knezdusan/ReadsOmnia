@@ -139,7 +139,7 @@ const List = ({listName, listData}) => {
       <div className = {styles.list}>
         <ArrowBackIosOutlined className={[styles.sliderArrow, styles.left].join(" ")} onClick={isTransitioned ? () => handleClick("left") : null} ref={listLeft}/>
         <div className = {styles.list_wrapper} ref={listRef}>
-          {listData.map((listItem) => <ListItem itemNum={counter++} itemsNum={visibleCovers} key={listItem.bid} listItemData={listItem} dimensions={dimensions} /> )}
+          {listData.map((listItem) => <ListItem page="front" itemNum={counter++} itemsNum={visibleCovers} key={listItem.bid} listItemData={listItem} dimensions={dimensions} /> )}
         </div>
         <ArrowForwardIosOutlined className={[styles.sliderArrow, styles.right].join(" ")} onClick={isTransitioned ? () => handleClick("right") : null} ref={listRight}/>
       </div>
