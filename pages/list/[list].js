@@ -1,17 +1,9 @@
-import Image from "next/image";
-import Link from 'next/link';
 import Head from "next/head";
 import Featured from "../../components/Featured";
 import ListGenre from "../../components/ListGenre";
-import Rating from "../../components/layout/Rating";
 import { useRouter } from 'next/router';
-import { useState, useEffect } from "react";
 import styles from "../../styles/ListPage.module.scss";
 import axios from "axios";
-import { cleanHtml, strSlugify } from "../../utils/helpers";
-import ShoppingCart from "@material-ui/icons/ShoppingCart";
-import Person from "@material-ui/icons/Person";
-import ArrowBack from "@material-ui/icons/ArrowBack";
 
 const listsArray = {
   'top-charts-bestsellers':

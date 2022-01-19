@@ -1,7 +1,7 @@
 import ListItem from "../components/ListItem";
 import styles from "../styles/ListGenre.module.scss";
 import useWindowDimensions from "./hooks/useWindowDimensions";
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 
 const ListGenre = ({listName, listGenreData}) => {
 
