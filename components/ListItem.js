@@ -63,7 +63,7 @@ const ListItem = ({page, itemNum, itemsNum, listItemData, dimensions}) => {
     }
 
     // console.log(isFirst, isLast);
-  },[isHovered]);
+  },[isHovered, itemNum, itemsNum]);
   
   
   const coverUrlSrc = `https://res.cloudinary.com/readsomnia/image/upload/covers/c_${listItemData.isbn10}.jpg`;

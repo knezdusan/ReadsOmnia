@@ -128,7 +128,7 @@ const List = ({listName, listData}) => {
     else{
       listRight.current.children[0].style.visibility = `visible`;
     }
-  },[slideNumber]);
+  },[slideNumber, slidersNumber]);
 
 
   let counter = 1;
