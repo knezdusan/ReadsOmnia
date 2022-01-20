@@ -401,7 +401,7 @@ export async function getStaticPaths() {
     params: { title: btitle },
   }))
 
-  return { paths, fallback: false }
+  return { paths, fallback: 'blocking' }
 }
 
 
@@ -412,6 +412,7 @@ export async function getStaticProps({params}) {
   // validate title and extract bookid (eg: tom-clancy-chain-of-command-a-jack-ryan-novel_1296)
   const lastIndex = title.lastIndexOf('_');
   let bookData = [];
+  let notFound = false;
 
   if(lastIndex > 0){
     const titleID = title.split("_").pop(); // like 1296
@@ -427,18 +428,12 @@ export async function getStaticProps({params}) {
       }
     )
 
-    if (!data) {
-      return {
-        notFound: true,
-      }
-    }
+    notFound = data ? false : true;
 
     bookData = data;
   }
   else{
-    return {
-      notFound: true,
-    }
+      notFound = true;
   }
 
   // const dataJson = await import('../public/data.json');
@@ -446,8 +441,8 @@ export async function getStaticProps({params}) {
 
   return {
     props: {
-      bookData: bookData || [],
+      bookData: bookData,
     },
-    revalidate: 10800,  // 3 hours
+    notFound,
   };
 }

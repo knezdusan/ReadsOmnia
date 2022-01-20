@@ -1,13 +1,27 @@
 .list_box{
   width: 100%;
   
-  .list_name{
-    font-size: 1.5rem;
-    font-weight: 500;
+  .list_name_box{
     margin-left: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     @media only screen and (max-width: 460px) {
       font-size: 1.2rem;;
+    }
+
+    h2{
+      font-weight: 500;
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    a{
+      font-size: 1.4rem;
+      font-weight: 400;
+      padding-right: 55px;
+      visibility: hidden;
     }
   }
 

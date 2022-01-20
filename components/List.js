@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import ListItem from "../components/ListItem";
 import styles from "../styles/List.module.scss";
 import ArrowBackIosOutlined from "@material-ui/icons/ArrowBackIosOutlined";
@@ -10,6 +11,7 @@ const List = ({listName, listData}) => {
   const [slideNumber, setSlideNumber]= useState(1);
   const [isTransitioned, setIsTransitioned] = useState(true);
 
+  const showMoreRef = useRef();
   const listRef = useRef();
   const listLeft = useRef();
   const listRight = useRef();
@@ -74,7 +76,7 @@ const List = ({listName, listData}) => {
     list_am: "Amazon.com Book Blockbusters",
     list_young_adult: "Top Young Adult Books",
     list_fbc: "Critically Acclaimed Books",
-    list_gr: "Community Acclaimed Must Reads:",
+    list_gr: "Community Acclaimed Must Reads",
     new_fiction: "New & Popular Fiction Bestsellers",
     new_nonfiction: "New & Popular Non-Fiction Bestsellers",
     list_prh: "Random House Global Publisher Bestsellers",
@@ -85,6 +87,32 @@ const List = ({listName, listData}) => {
     list_gb1: "Greatest Books of All Time",
     list_gb2: "Greatest Books of the Millennium",
   }
+
+
+  const listUrls = {
+    // top_all: "Top of the Charts - All Genres",
+    top_fiction: "top-charts-fiction",
+    top_nonfiction: "top-charts-non-fiction",
+    trending_fiction: "trending-fiction",
+    trending_nonfiction: "trending-non-fiction",
+    list_nyt: "new-york-times-bestsellers",
+    list_pw: "publishers-weekly-bestsellers",
+    list_ban: "burns-noble-book-bestsellers",
+    list_am: "amazon-book-bestsellers",
+    list_young_adult: "top-young-adult-books",
+    list_fbc: "critically-acclaimed-bestsellers",
+    list_gr: "community-acclaimed-bestsellers",
+    new_fiction: "new-fiction-bestsellers",
+    new_nonfiction: "new-non-fiction-bestsellers",
+    list_prh: "random-house-bestsellers",
+    list_hcp: "harper-collins-bestsellers",
+    list_hbg: "hachette-bestsellers",
+    list_ib: "indie-bestsellers",
+    list_children: "top-children-books",
+    list_gb1: "all-time-bestsellers",
+    list_gb2: "millennium-bestsellers",
+  }
+
 
   const handleTransition = () => {
     setTimeout(() => {
@@ -124,18 +152,20 @@ const List = ({listName, listData}) => {
 
     if(slideNumber === slidersNumber){
       listRight.current.children[0].style.visibility = `hidden`;
+      showMoreRef.current.style.visibility = `visible`;
     }
     else{
       listRight.current.children[0].style.visibility = `visible`;
+      showMoreRef.current.style.visibility = `hidden`;
     }
   },[slideNumber, slidersNumber]);
 
-
+ 
   let counter = 1;
 
   return (
     <div className = {styles.list_box}>
-      <div className = {styles.list_name}>{listNames[listName]}</div>
+      <div className = {styles.list_name_box}><h2>{listNames[listName]}</h2> <Link href={`/list/${listUrls[listName]}`}><a className={styles.show_more} ref={showMoreRef}>show more ››› </a></Link></div>
       <div className = {styles.list}>
         <ArrowBackIosOutlined className={[styles.sliderArrow, styles.left].join(" ")} onClick={isTransitioned ? () => handleClick("left") : null} ref={listLeft}/>
         <div className = {styles.list_wrapper} ref={listRef}>

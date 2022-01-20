@@ -199,7 +199,7 @@ export async function getStaticPaths() {
 
 
 export async function getStaticProps({params}) {
-
+  let notFound = false;
   let listSlug = "list_"+params.list; // like list_top-charts-bestsellers
 
   const { data } = await axios.get(
@@ -213,9 +213,7 @@ export async function getStaticProps({params}) {
   )
 
   if (Object.keys(data).length === 0) {
-    return {
-      notFound: true,
-    }
+      notFound = true;
   }
 
   // console.log(JSON.stringify(data));
@@ -225,5 +223,6 @@ export async function getStaticProps({params}) {
       listData: data,
     },
     revalidate: 10800,  // 3 hours
+    notFound,
   };
 }
