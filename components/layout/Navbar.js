@@ -72,7 +72,7 @@ export default function Navbar({isScrolled}) {
               <strong>Non-Adult:</strong>
               <li><Link href="/genre/teen-young-adult"><a>Teen & Young Adult</a></Link></li>
               <li><Link href="/genre/comics-graphic-novels"><a>Comics & Graphic Novels</a></Link></li>
-              <li><Link href="/genre/children"><a>Children's Books</a></Link></li>
+              <li><Link href="/genre/children"><a>Children&lsquo;s Books</a></Link></li>
             </ul>
           </div>
         </div>
