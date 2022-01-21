@@ -16,7 +16,11 @@
     color: white;
   }
 
-  .list_page_content{
-    margin-left: 50px;
+  .genre_page_content{
+    padding: 30px 50px;
+
+    @media only screen and (max-width: 460px) {
+      padding: 35px;
+    }
   }
 }

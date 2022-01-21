@@ -24,6 +24,7 @@ export default function Navbar({isScrolled}) {
 
     console.log(isHamburger);
   }
+
  
   return (
     <div className={isScrolled ? [styles.navbar, styles.scrolled].join(" ") : styles.navbar}>
@@ -44,12 +45,43 @@ export default function Navbar({isScrolled}) {
       </div>
 
       <div className={styles.right}>
-        <span>Genres</span>
-        <ArrowDropDown/>
-        <input type="text" name="search" placeholder="Search by title or author"/>
-        <Search />
-      </div>
+        <div className={styles.genre_box}>
+          <div className={styles.genre_nav_title}>Genres <ArrowDropDown/></div>
+          <div className={styles.genre_nav_menu}>
+            <ul>
+              <strong>Fiction:</strong>
+              <li><Link href="/genre/literature-fiction"><a>Literature & Fiction</a></Link></li>
+              <li><Link href="/genre/mystery-thriller-suspense"><a>Mystery, Thriller & Suspense</a></Link></li>
+              <li><Link href="/genre/science-fiction-fantasy"><a>Science Fiction & Fantasy</a></Link></li>
+              <li><Link href="/genre/humor-entertainment"><a>Humor & Entertainment</a></Link></li>
+              <li><Link href="/genre/history"><a>History</a></Link></li>
+              <li><Link href="/genre/lgbtq"><a>LGBTQ+</a></Link></li>
+              <li><Link href="/genre/romance"><a>Romance</a></Link></li>
+            </ul>
+            <ul>
+              <strong>Non-Fiction:</strong>
+              <li><Link href="/genre/biographies-memoirs"><a>Biographies & Memoirs</a></Link></li>
+              <li><Link href="/genre/politics-social-science"><a>Politics & Social Sciences</a></Link></li>
+              <li><Link href="/genre/christian-bibles"><a>Christian Books & Bibles</a></Link></li>
+              <li><Link href="/genre/business-money"><a>Business & Money</a></Link></li>
+              <li><Link href="/genre/arts-photography"><a>Arts & Photography</a></Link></li>
+              <li><Link href="/genre/self-help"><a>Self-Help</a></Link></li>
+              <li><Link href="/genre/health-fitness-dieting"><a>Health, Fitness & Dieting</a></Link></li>
+            </ul>
+            <ul>
+              <strong>Non-Adult:</strong>
+              <li><Link href="/genre/teen-young-adult"><a>Teen & Young Adult</a></Link></li>
+              <li><Link href="/genre/comics-graphic-novels"><a>Comics & Graphic Novels</a></Link></li>
+              <li><Link href="/genre/children"><a>Children's Books</a></Link></li>
+            </ul>
+          </div>
+        </div>
 
+        <div className={styles.search_nav_box}>
+          <input type="text" name="search" placeholder="Search by title or author"/>
+          <Search className={styles.search_ico} />
+        </div>
+      </div>
     </div>
   );
 }
