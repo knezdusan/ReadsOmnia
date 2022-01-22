@@ -44,7 +44,7 @@
   .right{
     position: absolute;
     right: 20px;
-    top: 22px;
+    top: 19px;
     align-items: baseline;
 
     .genre_box{
@@ -53,16 +53,15 @@
       padding-right: 0;
 
       &:hover{
-        margin-right: -7.7rem;
-        background-color: black;
-        opacity: 0.98;
-        box-shadow: 2px 2px 5px black;
+        margin-right: -8.8rem;
       }
 
       .genre_nav_title{
         display: flex;
         align-items: center;
         cursor: pointer;
+        padding: 0.3rem 0.5rem;
+        padding-bottom: 0.25rem;
         width: 85px;
       }
   
@@ -87,10 +86,17 @@
 
       &:hover .genre_nav_title{
         font-weight: bold;
+        background-color: black;
+        opacity: 0.98;
       }
 
       &:hover .genre_nav_menu{
-        display: inline;
+        display: flex;
+        background-color: black;
+        opacity: 0.98;
+        box-shadow: 2px 2px 5px black;
+        padding: 0.5rem;
+        padding-top: 0rem;
       }
     }
 

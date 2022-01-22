@@ -306,6 +306,29 @@ export default function Title({bookData}) {
     metaDescription += `.. readsOmnia`;
   }
 
+  // Genre link if exists in the categorySlug array meaning we hae a dedicated genre page
+  const genrePageArray = {
+    "Literature & Fiction": "literature-fiction",
+    "Children's Books": "children",
+    "Mystery, Thriller & Suspense": "mystery-thriller-suspense",
+    "Teen & Young Adult": "teen-young-adult",
+    "Politics & Social Sciences": "politics-social-science",
+    "Biographies & Memoirs": "biographies-memoirs",
+    "Christian Books & Bibles": "christian-bibles",
+    "Comics & Graphic Novels": "comics-graphic-novels",
+    "Science Fiction & Fantasy": "science-fiction-fantasy",
+    "Cookbooks, Food & Wine": "cookbooks-food-wine",
+    "History": "history",
+    "Humor & Entertainment": "humor-entertainment",
+    "Business & Money": "business-money",
+    "Arts & Photography": "arts-photography",
+    "Self-Help": "self-help",
+    "LGBTQ+ Books": "lgbtq",
+    "Health, Fitness & Dieting": "health-fitness-dieting",
+    "Romance": "romance",
+  };
+
+
   return (
     <>
       <Head>
@@ -344,13 +367,13 @@ export default function Title({bookData}) {
                 </div>
                 <div className = {styles.title_rating}><Rating rating={mainData.rating}/></div>
                 <div className = {styles.title_genres}>
-                    <div>{mainData.category}</div>
+                    <div>{mainData.category in genrePageArray ? <Link href={`/genre/${genrePageArray[mainData.category]}`}><a>{mainData.category}</a></Link> : mainData.Category}</div>
                     <div>{mainData.genre}</div>
                 </div>
                 <div className={styles.title_details}>
                   <ul>
                     <li key="1"><strong>Publisher : </strong> {mainData.publisher}</li>
-                    <li key="2"><strong>Publis date : </strong> {published}</li>
+                    <li key="2"><strong>Published : </strong> {published}</li>
                     <li key="3"><strong>Pages : </strong> {mainData.pagesno}</li>
                     <li key="4"><strong>ISBN-10 : </strong> {mainData.isbn10}</li>
                     <li key="5"><strong>ISBN-13 : </strong> {mainData.isbn13}</li>
