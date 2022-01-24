@@ -91,6 +91,10 @@
 .frontpage{
   background-image: url(/featured/lincoln-highway-novel-background.jpg);
 
+  h2{
+    color: black;
+  }
+  
   .cover{
     & > span{
       border: 5px solid #015db8 !important;
