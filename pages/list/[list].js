@@ -157,16 +157,6 @@ export default function ListPage({listData}) {
   const curListMetaTitle = listsArray[curListSlug][1];
   const curListMetaDescription = listsArray[curListSlug][2];
 
-  const featuredData = {
-    page: "frontpage",
-    bid: "58",
-    isbn: "0735222355",
-    title: <h2>The Lincoln Highway:<br />A Novel</h2>,
-    text: <span><p>#1 NEW YORK TIMES BESTSELLER</p><p>The bestselling author of A Gentleman in Moscow and Rules of Civility and master of absorbing, sophisticated fiction returns with a stylish and propulsive novel set in 1950s America.</p></span>,
-    cover: "lincoln-highway-novel-cover.jpg",
-  };
-
-
   return (
     <>
       <Head>
@@ -175,7 +165,7 @@ export default function ListPage({listData}) {
       </Head>
 
       <div className={styles.main_content}>
-        <Featured featuredData = {featuredData}/>
+        <Featured />
         <h1 className={styles.h1}>{curListTitle}</h1>
 
         <div className={styles.list_page_content}>
