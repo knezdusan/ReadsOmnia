@@ -1,0 +1,317 @@
+.main_content{
+  background-image: url(/readsomnia-bck.jpg);
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+
+  section{
+    box-shadow: 0px 1px 2px #4c4c4c;
+    border-bottom: 1px solid black;
+    line-height: 1.5rem;
+
+    .buy_book{
+      font-size: 1.2rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      margin: 2rem auto;
+      padding: 0.5rem 3rem;
+      cursor: pointer;
+      box-shadow: 3px 3px 5px black;
+
+      @media only screen and (max-width: 460px) {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+      }
+    }
+
+    h2{
+      font-size: 1.6rem;
+      font-family: 'Special Elite', cursive;
+      font-weight: 400;
+      margin-top: 0.8rem;
+      margin-bottom: 2rem;
+
+      @media only screen and (max-width: 460px) {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  .top_space{
+    height: 70px;
+  }
+  
+  .bottom_space{
+    height: 20px;
+  }
+
+  .social_box{
+    border:2px solid green;
+  }
+
+  .main_box_wrapper{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    padding-top: 70px;
+
+    // @media only screen and (min-width: 1500px) {
+    //   width: 250px;
+    //   height: 375px;
+    // }
+
+    @media only screen and (max-width: 1275px) {
+      padding-top: 20px;
+    }
+
+  }
+
+  .main_box{
+    // position: relative;
+    width: 850px;
+    background: var(--lbck);
+    color: white;
+    // margin: auto;
+    border-radius: 14px;
+    box-shadow: rgb(0 0 0) 0px 2px 15px;
+    overflow: hidden;
+
+    .title_top{
+      display: flex;
+
+      @media only screen and (max-width: 850px) {
+        flex-direction: column;
+      }
+
+      .title_info_left{
+        display: flex;
+        flex-direction: column;
+
+        @media only screen and (max-width: 850px) {
+          align-items: center;
+        }
+
+        .title_cover{
+          position: relative;
+          width: 300px;
+          min-width: 300px;
+          min-height: 450px;
+          box-shadow: 0px 20px 30px black;
+          background: black;
+          border-radius: 14px;
+          margin: 0 auto;
+
+          img{
+            outline: 2px solid #000000;
+            outline-offset: -2px;
+            border-radius: 14px;
+          }
+        }
+
+        .title_rating{
+          text-align: center;
+          margin-top: 1rem;
+        }
+
+        .title_genres{
+          margin-top: 1rem;
+          margin-bottom: 0.8rem;
+          text-align: center;
+          // line-height: 1.5rem;
+        }
+
+        .title_details{
+          padding: 0;
+          padding-left: 1.5rem;
+
+          ul{
+            list-style: none;
+            padding: 0rem;
+            line-height: 1.7rem;
+
+            li strong{
+              margin-right: 0.5rem;
+            }
+          }
+        }
+
+        .authors_box{
+          display: flex;
+          flex-direction: column;
+          margin: 1rem;
+          margin-top: 2rem;
+
+          .author_box a{
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+
+            img{
+              border-radius: 50%;
+            }
+
+            .author_name{
+              margin-left: 0.5rem;
+            }
+          }
+        }
+      }
+  
+      .title_info_right{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 25px;
+
+        h1{
+          font-size: 1.6rem;
+          font-family: 'Special Elite', cursive;
+          font-weight: 400;
+          padding: 1rem;
+          line-height: 2rem;
+
+          @media only screen and (max-width: 460px) {
+            line-height: 2.3rem;
+          }
+        }
+
+        .title_synopsys{
+          // line-height: 1.3rem;
+        }
+      }
+    }
+
+    .editorials_box{
+      padding: 3rem;
+      padding-bottom: 1.5rem;
+
+      @media only screen and (max-width: 460px) {
+        padding: 2rem 1rem;
+      }
+    }
+
+    .reviews_box{
+      padding: 3rem;
+      padding-bottom: 1.5rem;
+
+      @media only screen and (max-width: 460px) {
+        padding: 2rem 1rem;
+        padding-bottom: 1.5rem;
+      }
+
+      .review_box{
+        padding-bottom: 1.5rem;
+        margin-top: 1.5rem;
+
+        .review_heading{
+          display: flex;
+          margin-bottom: 0.5rem;
+
+          @media only screen and (max-width: 460px) {
+            flex-direction: column;
+          }
+  
+          .review_rating{
+            margin-right: 15px;
+          }
+
+          .reviewer{
+            display: flex;
+
+            .review_name{
+              margin-left: 3px;
+              margin-top: 3px;
+            }
+          }
+        }
+      }
+
+      .review_box:not(:last-child){
+        border-bottom: 1px solid #3f3d3d;
+      }
+    }
+
+    .excerpt_section{
+      .excerpt_box{
+        padding: 3rem;
+
+        @media only screen and (max-width: 460px) {
+          padding: 2rem 1rem;
+        }
+      }
+    }
+
+    .video_section{
+      .video_box{
+        padding: 3rem;
+
+        @media only screen and (max-width: 460px) {
+          padding: 2rem 1rem;
+        }
+      }
+
+      .buy_book{
+        position: relative;
+        top:15px;
+      }
+    }
+
+    .related_box{
+      padding: 3rem;
+
+      @media only screen and (max-width: 460px) {
+        padding: 2rem 1rem;
+      }
+
+      .related_list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .rl_book_cover{
+          width: 230px;
+          height: 345px;
+          margin-bottom: 15px;
+          text-align: center;
+
+          img{
+            width:220px !important;
+            height: 330px !important;
+            outline: 2px solid #000000;
+            outline-offset: -2px;
+            transition: all 0.5s ease;
+          }
+
+          &:hover{
+            img{
+              width: 230px !important;
+              height: 345px !important;
+            }
+          }
+
+        }
+      }
+
+    }
+
+
+ 
+    .read_more{
+      color:#656565;
+      cursor: pointer;
+      position: absolute;
+      
+      bottom: 1em;
+      right: 2em;
+  
+      &:hover{
+        color: white;
+      }
+    }
+
+  }
+}
+

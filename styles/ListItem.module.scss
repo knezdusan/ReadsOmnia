@@ -1,0 +1,134 @@
+.list_item_box{
+  display: flex;
+  flex-direction: column;
+  margin-right: 15px;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  position: relative;
+
+  &:hover{
+    z-index: 10;
+    position: relative;
+
+    img{
+      border-top-left-radius: 5px;
+    }
+  }
+
+  .list_item_top{
+    display: flex;
+    box-shadow: 0px 0px 20px black;
+
+    .list_item_cover{
+      position: relative;
+      // width: 230px;
+      // height: 345px;
+
+      width: 130px;
+      height: 195px;
+
+      @media only screen and (min-width: 460px) {
+        width: 230px;
+        height: 345px;
+      }
+  
+      @media only screen and (min-width: 1500px) {
+        width: 250px;
+        height: 375px;
+      }
+  
+      @media only screen and (min-width: 1650px) {
+        width: 280px;
+        height: 420px;
+      }
+      // width: 200px;
+      // height: 300px;
+  
+      img{
+        outline: 2px solid #000000;
+        outline-offset: -2px;
+      }
+    }
+
+    .item_info{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 10px;
+      margin-left: 15px;
+
+      .item_genre{
+        font-size: 0.8rem;
+      }
+
+      h3{
+        font-family: 'Special Elite', cursive;
+        font-size: 2rem;
+        font-weight: 400;
+        margin-bottom: 0.8rem;
+        margin-top: 0.8rem;
+      }
+
+      .item_authors{
+        font-family: 'Special Elite', cursive;
+        // font-size: 0.9rem;
+        font-weight: 400;
+      }
+
+      .item_info_down{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        @media only screen and (max-width: 460px) {
+          flex-direction: column;
+          padding-top: 1rem;
+          line-height: 2rem;
+        }
+
+        .item_rating{
+
+        }
+
+        .info_button{
+          font-size: 1.2rem;
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          padding: 0 0.5rem;
+          cursor: pointer;
+        }
+      }
+
+
+    }
+  }
+
+  .item_synopsys{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    padding-top: 0.5rem;
+    height: 100%;
+
+
+    @media only screen and (max-width: 460px) {
+      padding-bottom: 2.5rem;
+    }
+  }
+
+  .read_more{
+    color:#656565;
+    cursor: pointer;
+    position: absolute;
+    
+    bottom: 1em;
+    right: 2em;
+
+    &:hover{
+      color: white;
+    }
+  }
+
+}

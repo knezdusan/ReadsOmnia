@@ -1,0 +1,74 @@
+.footer{
+  color: #bababa;
+
+  .footer_box{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5rem;
+    max-width: 850px;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+    right: 20px;
+    font-size: 0.95rem;
+
+    & > div{
+      position: relative;
+      top: 5px;
+
+      @media only screen and (max-width: 460px) {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .space{
+      width: 2rem;
+      min-width: 2rem;
+
+      @media only screen and (max-width: 460px) {
+        width: initial;
+        min-width: initial;
+      }
+    }
+
+    .copy_box{
+      a{
+        color: #bababa !important;
+
+        &:hover{
+          color: white !important;
+        }
+      }
+    }
+
+    .app_box{
+      a{
+        padding: 0 0.4rem;
+        color: #bababa !important;
+
+        &:hover{
+          color: white !important;
+        }
+      }
+    }
+
+    .social_box{
+      display: flex;
+
+      span{
+        margin-right: 0.4rem;
+      }
+
+      a{
+        margin-right: 0.3rem;
+        color: #bababa !important;
+        position: relative;
+        bottom: 2px;
+
+        &:hover{
+          color: white !important;
+        }
+      }
+    }
+  }
+}

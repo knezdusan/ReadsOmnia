@@ -1,0 +1,39 @@
+.search_box{
+
+  .search_input{
+    display: flex;
+    z-index: 10;
+
+    ::placeholder {
+      color: white;
+      opacity: 1; /* Firefox */
+    }
+    
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+     color: white;
+    }
+    
+    ::-ms-input-placeholder { /* Microsoft Edge */
+     color: white;
+    }
+    
+    input{
+      border: none;
+      padding: 5px 10px;
+      padding-right: 30px;
+      margin-right: -25px;
+      width: 200px;
+      border-left: 2px solid #7a7979;
+      color: white;
+      background: black;
+      opacity: 0.4;
+      line-height: 1rem;
+    }
+    
+    .search_ico{
+      color: #999999;
+      z-index: 10;
+    }
+  }
+  
+}

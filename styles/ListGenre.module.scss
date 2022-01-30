@@ -1,0 +1,28 @@
+.list_genre_box{
+  padding-bottom: 2rem;
+
+  .list_genre_items{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .load_more{
+    position: relative;
+    bottom: 0.5rem;
+
+    @media only screen and (max-width: 460px) {
+      font-size: 0.8rem;
+    }
+
+    a{
+      display: flex;
+      align-items: center;
+
+      svg{
+        font-size: 1rem;
+        margin-left: 0.5rem;
+      }
+    }
+
+  }
+}

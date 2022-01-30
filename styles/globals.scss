@@ -1,0 +1,41 @@
+:root{
+    --mainbck:#181818;
+    --lbck:#212121;
+    --mlink:#a0a0f0;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  // font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+  // font-family: 'EB Garamond', serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  color: var(--mlink) !important;
+  color: inherit;
+  text-decoration: none;
+
+  &:hover{
+    color:#c8c8fe !important;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.not-found, .loading{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30vh;
+  background-image: url(/readsomnia-bck.jpg);
+  background-attachment: fixed;
+  background-position: 50%;
+  background-size: cover;
+}
+

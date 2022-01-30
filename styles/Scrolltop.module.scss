@@ -1,0 +1,23 @@
+.scroll_top{
+  border: 2px solid black;
+  padding: 4px 6px;
+  display: inline-block;
+  position: fixed;
+  bottom: 10px;
+  right: 4%;
+  background-color: #5e5e5e;
+  opacity: 0.8;
+  color: white;
+  border-radius: 50%;
+  z-index: 99;
+  cursor: pointer;
+  transition: 500ms;
+
+  &:hover{
+    transform: scale(1.1);
+  }
+
+  .scrall_top_icon{
+    font-size: 2rem;
+  }
+}
