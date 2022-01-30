@@ -7,7 +7,7 @@ export default function GenreList({genreData}){
 
   const { screenHeight, screenWidth } = useWindowDimensions();
 
-  // Posible cover widths - intrinsic: 300 x 450
+  // Possible cover widths - intrinsic: 300 x 450
   let coverWidth = 130;
   let coverHeight = 195;
 
