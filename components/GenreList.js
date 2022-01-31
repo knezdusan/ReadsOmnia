@@ -4,7 +4,6 @@ import useWindowDimensions from "./hooks/useWindowDimensions";
 import { useRef } from "react";
 
 export default function GenreList({genreData}){
-  // test2
   const { screenHeight, screenWidth } = useWindowDimensions();
 
   // Possible cover widths - intrinsic: 300 x 450
