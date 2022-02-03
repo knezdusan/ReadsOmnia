@@ -16,6 +16,14 @@
     display: none;
   }
 
+  .main_logo{
+    display: block;
+  }
+
+  .main_logo_short{
+    display: none;
+  }
+
   .close_menu{
     display: none;
   }
@@ -120,6 +128,14 @@
     .hamburger{
       display: block;
       margin: 0 10px;
+    }
+
+    .main_logo{
+      display: none;
+    }
+
+    .main_logo_short{
+      display: block;
     }
 
     .main_nav{
