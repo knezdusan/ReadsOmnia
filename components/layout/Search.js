@@ -49,7 +49,7 @@ export default function Search() {
         <input type="text" onChange={e => onChangeHandler(e.target.value)} value={query} placeholder="Search by title or author"/>
         <SearchRounded className={styles.search_ico} />
       </div>
-      <div className={styles.search_results} onMouseLeave={outHandler}>
+      <div className={styles.search_results} onClick={outHandler} onMouseLeave={outHandler}>
         <SearchDrop booksObj={booksObj} />
       </div>
       

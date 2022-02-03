@@ -112,7 +112,9 @@
     padding: initial;
 
     .right{
-      display: none;
+      .genre_box{
+        display: none;
+      }
     }
 
     .hamburger{
@@ -148,6 +150,11 @@
         right: 7px;
         color: #989898;
       }
+    }
+
+    .search_nav_box{
+      position: relative;
+      bottom: 5px;
     }
   }
 }

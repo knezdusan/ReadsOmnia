@@ -1,14 +1,20 @@
 import Link from "next/link";
 import Image from "next/image";
 import Search from "./Search";
+import useWindowDimensions from "../hooks/useWindowDimensions";
 import styles from "../../styles/Navbar.module.scss";
 import logoPic from '../../public/logo.png';
+import logoPicShort from '../../public/logo-short.png';
 import ArrowDropDown from "@material-ui/icons/ArrowDropDown";
 import Menu from "@material-ui/icons/Menu";
 import Close from "@material-ui/icons/Close";
 import { useState, useRef } from "react";
 
 export default function Navbar({isScrolled}) {
+
+  const { screenHeight, screenWidth } = useWindowDimensions();
+
+  console.log(typeof screenWidth);
 
   const [isHamburger, setIsHamburger] = useState(false);
   const hamburgerRef = useRef();
@@ -31,7 +37,7 @@ export default function Navbar({isScrolled}) {
       <div className={styles.left}>
         <Menu className={styles.hamburger} onClick={hamburgerClick} />
         <Link href="/">
-            <a className={styles.main_logo}><Image  src={logoPic} alt="ReadsOmnia logo" priority /></a>
+            <a className={styles.main_logo}><Image  src={screenWidth > 460 ? logoPic : logoPicShort} alt="ReadsOmnia logo" priority /></a>
         </Link>
         <div className={styles.main_nav} ref={hamburgerRef}>
           <Link href="/list/top-charts-bestsellers"><a>Top of Charts</a></Link>
