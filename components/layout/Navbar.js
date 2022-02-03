@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import SearchDrop from "./SearchDrop";
+import Search from "./Search";
 import styles from "../../styles/Navbar.module.scss";
 import logoPic from '../../public/logo.png';
 import ArrowDropDown from "@material-ui/icons/ArrowDropDown";
@@ -78,7 +78,7 @@ export default function Navbar({isScrolled}) {
         </div>
 
         <div className={styles.search_nav_box}>
-          <SearchDrop />
+          <Search />
         </div>
       </div>
     </div>

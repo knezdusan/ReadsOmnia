@@ -1,39 +1,81 @@
-.search_box{
 
-  .search_input{
-    display: flex;
-    z-index: 10;
+.search_results_false{
+    padding: 10px;
+    text-align: center;
+}
 
-    ::placeholder {
-      color: white;
-      opacity: 1; /* Firefox */
+.search_drop_box{
+    max-width: 300px;
+    background-color: var(--mainbck);
+    max-height: 90vh;
+    position: relative;
+    right: 100px;
+    margin-right: -100px;
+    margin-top: 1px;
+
+    /* hide search scroll */
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll; 
+
+    &::-webkit-scrollbar {
+        display: none; /* for Chrome, Safari, and Opera */
     }
-    
-    :-ms-input-placeholder { /* Internet Explorer 10-11 */
-     color: white;
+
+
+    a{
+
     }
-    
-    ::-ms-input-placeholder { /* Microsoft Edge */
-     color: white;
+
+    .search_result_item{
+        display: flex;
+        border-bottom: 1px solid #343434;
+        box-shadow: 0 0 5px #313948;
+
+        &:hover{
+            background-color: #313948;
+        }
+
+        img{
+            max-width: 90px;
+            min-width: 90px;
+            max-height: 130px;
+            min-height: 130px;
+            margin: 2px 0px 2px 2px;
+            outline: 2px solid #000000;
+        }
+
+        .search_result_item_data{
+            display: flex;
+            flex-direction: column;
+            padding: 15px 5px 10px 15px;
+            padding-right: 5px;
+            color: #cacfd9;
+
+            h3{
+                font-family: "Special Elite", cursive;
+                color: white;
+                font-weight: 500;
+                font-size: 1rem;
+                padding: 0;
+                margin: 0;
+                margin-bottom: 4px;
+            }
+
+            .search_result_authors{
+                font-size: 0.8rem;
+                margin-bottom: 10px;
+            }
+
+            .search_resut_genre{
+                display: flex;
+                flex: 1;
+                align-items: flex-end;
+                font-size: 0.8rem;
+                justify-content: center;
+                position: relative;
+                right: 5px;
+            }
+        }
     }
-    
-    input{
-      border: none;
-      padding: 5px 10px;
-      padding-right: 30px;
-      margin-right: -25px;
-      width: 200px;
-      border-left: 2px solid #7a7979;
-      color: white;
-      background: black;
-      opacity: 0.4;
-      line-height: 1rem;
-    }
-    
-    .search_ico{
-      color: #999999;
-      z-index: 10;
-    }
-  }
-  
 }
