@@ -17,7 +17,7 @@ export default function RelatedPosts({relatedPosts}) {
                         const relPostHeroSrc = `/blog/${relPost.index}/${relPost.hero}`;
 
                         return(
-                            <Link href={`/blog/${relPost.slug}`}>
+                            <Link href={`/blog/${relPost.slug}`} key={relPost.slug}>
                                 <a className={styles.rel_post_box}>
                                     <Image
                                         unoptimized={true}
