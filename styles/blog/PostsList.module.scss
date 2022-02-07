@@ -1,0 +1,60 @@
+.posts_list_box{
+    list-style: none;
+    padding: 0;
+
+    .post_list_item{
+        color:white !important;
+        display: block;
+        margin-bottom: 1rem;
+
+        &:hover{
+            background-color: #333540;
+        }
+
+        img{
+            transition: 5000ms;
+
+            &:hover{
+                transform: scale(1.2);
+            }
+        }
+
+        .post_list_item_data{
+            padding: 2rem;
+            padding-top: 1rem;
+
+            h2{
+                font-family: 'Special Elite', cursive;
+                font-weight: 400;
+                font-size: 1.7rem;
+            }
+
+            .post_list_item_meta{
+                font-size: 0.9rem;
+                text-align: right;
+                position: relative;
+                top: 1rem;
+                color: #8b8b8b;
+            }
+
+            @media only screen and (max-width: 460px) {
+                padding:1rem;
+                padding-top: 0.5rem;
+                border-bottom: 1px solid #4a4a4a;
+
+                h2{
+                    font-size: 1.2rem;
+                }
+
+                p{
+                    font-size: 0.9rem;
+                }
+
+                .post_list_item_meta{
+                    font-size: 0.7rem;
+                    top:0.5rem;
+                }
+            }
+        }
+    }
+}
