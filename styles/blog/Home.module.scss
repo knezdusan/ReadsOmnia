@@ -1,41 +1,57 @@
-.posts_lists_main{
-    background-image: url(/readsomnia-bck.jpg);
-    width: 100%;
-    height: 100%;
-    background-attachment: fixed;
-    background-position: center center;
-    background-size: cover;
+.blog_main{
+  background-image: url(/readsomnia-bck.jpg);
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
 
-    .posts_lists_wrapper{
-        display: flex;
-        justify-content: center;
-        padding: 20px;
-        padding-top: 70px;
+  .blog_main_wrapper{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    padding-top: 70px;
 
-        @media only screen and (max-width: 1275px) {
-          padding-top: 20px;
-        }
-
-        .post_lists_wrapper_inner{
-            width: 850px;
-            background: var(--lbck);
-            color: white;
-            border-radius: 14px;
-            box-shadow: rgb(0 0 0) 0px 2px 15px;
-            overflow: hidden;
-
-            h1{
-                font-size: 1.6rem;
-                font-family: 'Special Elite', cursive;
-                font-weight: 400;
-                padding: 1rem;
-                line-height: 2rem;
-                box-shadow: 0 3px 3px black;
-
-                @media only screen and (max-width: 460px) {
-                  line-height: 2.3rem;
-                }
-            }
-        }
+    @media only screen and (max-width: 1275px) {
+      padding-top: 20px;
     }
+
+    .blog_main_wrapper_inner{
+      width: 850px;
+      background: var(--lbck);
+      color: white;
+      border-radius: 14px;
+      box-shadow: rgb(0 0 0) 0px 2px 15px;
+      overflow: hidden;
+
+      .blog_main_heading{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem;
+        box-shadow: 0 10px 10px #0c0c0c;
+
+        @media only screen and (max-width: 460px) {
+          padding:  2rem 1rem;
+        }
+
+        h1{
+          font-size: 1.6rem;
+          font-family: 'Special Elite', cursive;
+          font-weight: 400;
+          padding: 0rem;
+          margin: 0;
+          line-height: 2rem;
+
+          @media only screen and (max-width: 460px) {
+            font-size: 1.3rem;
+
+            .blog_home_title_link{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
 }

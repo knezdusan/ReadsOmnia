@@ -67,3 +67,21 @@ export const getAllPosts = () => {
 
     return posts;
 }
+
+
+// **** Topics handle
+
+export const getSlugFromTopic = (topic) => topic.replace(/^\s+|\s+$/g, '').replace(/\s/g, '-').toLocaleLowerCase();
+
+export const getAllTopicsArr = () => {
+    const postsArr = getAllPosts();
+    const topicsSet = new Set(postsArr.map((post) => post.meta.topic)); // to make the topics list unique
+    const topicsArr = Array.from(topicsSet).map((topic) => topic);
+
+    return topicsArr;
+}
+
+export const getAllTopicSlugsArr = getAllTopicsArr().map((topic) => getSlugFromTopic(topic));
+
+export const getAllTopicsSlugsCombo = getAllTopicsArr().map((topic) => ([getSlugFromTopic(topic), topic]));
+
