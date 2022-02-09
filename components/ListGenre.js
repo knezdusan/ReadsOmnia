@@ -32,10 +32,7 @@ const genrePageArray = {
 const ListGenre = ({listName, listGenreData}) => {
 
   const listRef = useRef();
-
   const { screenHeight, screenWidth } = useWindowDimensions();
-  // console.log(screenHeight, screenWidth);
-
 
   // Posible cover widths - intrinsic: 300 x 450
   const coverWidth = 130;
@@ -63,8 +60,6 @@ const ListGenre = ({listName, listGenreData}) => {
   const realCoverWidth = coverWidth + 15;   // to include the right margin - 240
   let visibleCovers = Math.floor(realScreenWidth/realCoverWidth);  // 1180 / 240 = 4
   if(visibleCovers === 1) visibleCovers = 2;
-  // console.log('visibleCovers:', visibleCovers);
-
 
   let counter = 1;
 

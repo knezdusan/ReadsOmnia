@@ -61,11 +61,9 @@ const ListItem = ({page, itemNum, itemsNum, listItemData, dimensions}) => {
       setIsFirst(false);
       setIsLast(false);
     }
-
-    // console.log(isFirst, isLast);
   },[isHovered, itemNum, itemsNum]);
-  
-  
+
+
   const coverUrlSrc = `https://res.cloudinary.com/readsomnia/image/upload/covers/c_${listItemData.isbn10}.jpg`;
   const coverBlurUrlSrc = `https://res.cloudinary.com/readsomnia/image/upload/covers/blur/c_${listItemData.isbn10}.jpg`;
 
@@ -130,9 +128,9 @@ const ListItem = ({page, itemNum, itemsNum, listItemData, dimensions}) => {
     itemRef.current.style.left = "0px";
   }
 
-  
+
   const handlOnMouseEnter = (isHovered) => {
-    
+
     if(isHovered){
 
       // handle image shrink and display on responsive
@@ -150,7 +148,7 @@ const ListItem = ({page, itemNum, itemsNum, listItemData, dimensions}) => {
       }
 
       itemRef.current.style.zIndex = "99";
-      
+
       itemRef.current.children[0].children[0].style.width = "130px";
       itemRef.current.children[0].children[0].style.minWidth = "130px";
       itemRef.current.children[0].children[0].style.height = "195px";
@@ -158,7 +156,7 @@ const ListItem = ({page, itemNum, itemsNum, listItemData, dimensions}) => {
       // lighter background
       itemRef.current.style.backgroundColor = `#212121`;
       itemRef.current.style.boxShadow = `0 2px 15px #000000`;
-      
+
 
       // if the first item in current viewport, dont shift the info box
       // if last slide, shirt it to the right to make it fully visible
@@ -182,7 +180,7 @@ const ListItem = ({page, itemNum, itemsNum, listItemData, dimensions}) => {
     marginLeft: '-0.3rem'
   };
 
- 
+
   return (
     <div className = {styles.list_item_box} data-index={itemNum} onMouseEnter={handlOnMouseEnter(isHovered)} onMouseOver={debouncedHandleMouseEnter} onMouseLeave={handlOnMouseLeave} ref={itemRef}>
       <div className = {styles.list_item_top}>

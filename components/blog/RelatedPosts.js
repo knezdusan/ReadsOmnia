@@ -2,12 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "../../styles/blog/RelatedPosts.module.scss";
 
-
 export default function RelatedPosts({relatedPosts}) {
-
-    console.log("-----> ", relatedPosts);
-
-
     return (
         <div className={styles.post_footer}>
             <h3 className={styles.rel_posts_h1}>Related Posts:</h3>

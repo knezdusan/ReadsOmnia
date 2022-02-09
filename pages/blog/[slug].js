@@ -26,8 +26,6 @@ export default function PostPage({source, meta, relatedPostsMeta}) {
       setCurUrl(`${baseUrl}${router.asPath}`);
     }, [router.asPath]);
 
-
-    console.log(meta);
     const components = { Link, Image, }
 
     let postDate = new Date(meta.date);

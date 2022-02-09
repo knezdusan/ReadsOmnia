@@ -8,7 +8,7 @@ import styles from "../../../styles/blog/Home.module.scss";
 export default function Topic({postsMeta, getAllTopicsSlugsCombo}) {
 
     const topic = postsMeta[0].topic;
-    console.log("------------> ",topic);
+
     return (
         <>
             <Head>

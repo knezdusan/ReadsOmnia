@@ -17,8 +17,6 @@ const List = ({listName, listData}) => {
   const listRight = useRef();
 
   const { screenHeight, screenWidth } = useWindowDimensions();
-  // console.log(screenHeight, screenWidth);
-
 
   // Posible cover widths - intrinsic: 300 x 450
   const coverWidth = 130;
@@ -47,14 +45,13 @@ const List = ({listName, listData}) => {
   const realCoverWidth = coverWidth + 15;   // to include the right margin - 240
   let visibleCovers = Math.floor(realScreenWidth2/realCoverWidth);  // 1180 / 240 = 4
   if(visibleCovers === 1) visibleCovers = 2;
-  // console.log('visibleCovers:', visibleCovers);
 
   const sliderWidth = visibleCovers * realCoverWidth; // 4 * 240 = 960
   const sliderWidthHolder = sliderWidth; // 4 * 240 = 960
-  
+
   const slidersNumber = Math.floor(30 / visibleCovers); // 7 (eg 30 / 4 = 7) (7*4 = 28, remainder 2)
   const sliderReminder = 30 % visibleCovers; // remaining covers - 2
-  
+
   let sliderWidthLast;
   if(sliderReminder > 1){
     slidersNumber ++;
@@ -160,7 +157,7 @@ const List = ({listName, listData}) => {
     }
   },[slideNumber, slidersNumber]);
 
- 
+
   let counter = 1;
 
   return (
