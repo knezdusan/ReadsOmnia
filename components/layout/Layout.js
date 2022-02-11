@@ -27,7 +27,7 @@ export default function Layout({ children }) {
   return (
     <div className={styles.page_container}>
       <Head>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
         <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Special+Elite&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href='https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Special+Elite&display=swap' />
 
