@@ -9,8 +9,27 @@ import { serialize } from "next-mdx-remote/serialize";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import Social from "../../components/layout/Social";
-import { getAllPosts, getPostsFromSlug, getSlugs } from "../../utils/helpers_blog";
+import { getAllPosts, getPostsFromSlug, getSlugs} from "../../utils/helpers_blog";
+import { ifEmptyUndefinedNull } from "../../utils/helpers";
 import styles from "../../styles/blog/PostPage.module.scss";
+
+
+/*
+{
+    index: 0,
+    slug: 'what-is-readsomnia',
+    title: 'ReadsOmnia - Beyond the Trending Hashtag',
+    meta_title: '',
+    meta_description: 'What is Readsomnia?',
+    hero: 'what-is-readsomnia.jpg',
+    topic: 'ReadsOmnia',
+    author: 'ReadsOmnia',
+    date: '2020-05-09',
+    toc: false,
+    related: [],
+    excerpt: 'In the time of hyper-production in publishing industry, ReadsOmnia brings a fresh and moderated selection of the best fiction and nonfiction books to your must-read collection.'
+  }
+*/
 
 
 export default function PostPage({source, meta, relatedPostsMeta}) {
@@ -33,8 +52,8 @@ export default function PostPage({source, meta, relatedPostsMeta}) {
     const postTopic = meta.topic;
     const topicSlug = postTopic.replace(/^\s+|\s+$/g, '').replace(/\s/g, '-').toLocaleLowerCase();
 
-    const metaTitle = meta.meta_title;
-    const metaDescription = meta.meta_description;
+    const metaTitle = ifEmptyUndefinedNull(meta.meta_title) ? meta.title : meta.meta_title;
+    const metaDescription = ifEmptyUndefinedNull(meta.meta_description) ? meta.excerpt: meta.meta_description;
 
     const postImgSrc = `/blog/${meta.index}/${meta.hero}`;
 
@@ -77,7 +96,7 @@ export default function PostPage({source, meta, relatedPostsMeta}) {
                             height={370}
                         />
                         <div className={styles.post_heading}>
-                            <div className={styles.post_meta}><Link href="/blog/"><a className={styles.post_meta_home}>ReadsOmnia blog ›</a></Link> {postDate}, from <span>{meta.author}</span> in <Link href={`/blog/topic/${topicSlug}`}><a>{postTopic}</a></Link></div>
+                            <div className={styles.post_meta}><span className={styles.post_meta_links}><Link href="/blog/"><a className={styles.post_meta_home}>ReadsOmnia blog ›</a></Link> <Link href={`/blog/topic/${topicSlug}`}><a className={styles.post_meta_topic}>{postTopic} ›</a></Link></span> {postDate}, from <span>{meta.author}</span> </div>
                             <h1>{meta.title}</h1>
                             <p className={styles.post_excerpt}>{meta.excerpt}</p>
                         </div>

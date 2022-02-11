@@ -26,30 +26,45 @@
 
       .blog_main_heading{
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 2rem;
+        flex-direction: column;
+        padding: 1rem 2rem;
         box-shadow: 0 10px 10px #0c0c0c;
 
         @media only screen and (max-width: 460px) {
-          padding:  2rem 1rem;
+          padding:  1rem;
         }
 
-        h1{
+        .blog_heading_top{
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+          align-items: center;
+
+
+          h1{
+            font-size: 1.6rem;
+            font-family: 'Special Elite', cursive;
+            font-weight: 400;
+            padding: 0rem;
+            margin: 0;
+            line-height: 2rem;
+          }
+
+          @media only screen and (max-width: 460px) {
+            h1{
+              font-size: 1.3rem;
+            }
+          }
+        }
+
+        .blog_heading_bottom{
           font-size: 1.6rem;
           font-family: 'Special Elite', cursive;
           font-weight: 400;
-          padding: 0rem;
+          padding: 1rem 0rem 0.5rem 0rem;
           margin: 0;
           line-height: 2rem;
-
-          @media only screen and (max-width: 460px) {
-            font-size: 1.3rem;
-
-            .blog_home_title_link{
-              display: none;
-            }
-          }
+          text-align: center;
         }
       }
     }

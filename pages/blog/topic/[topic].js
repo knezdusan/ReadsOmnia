@@ -20,8 +20,11 @@ export default function Topic({postsMeta, getAllTopicsSlugsCombo}) {
                 <div className={styles.blog_main_wrapper}>
                     <div className={styles.blog_main_wrapper_inner}>
                         <div className={styles.blog_main_heading}>
-                            <h1>{topic} › <Link href="/blog/"><a className={styles.blog_home_title_link}>ReadsOmnia Blog</a></Link></h1>
-                            <BlogTopics topics={getAllTopicsSlugsCombo}/>
+                            <div className={styles.blog_heading_top}>
+                                <Link href="/blog/"><a className={styles.blog_home_title_link}>◂ReadsOmnia Blog</a></Link>
+                                <BlogTopics topics={getAllTopicsSlugsCombo}/>
+                            </div>
+                            <h1 className={styles.blog_heading_bottom}>{topic}</h1>
                         </div>
                         <PostsList postsMeta={postsMeta}/>
                     </div>

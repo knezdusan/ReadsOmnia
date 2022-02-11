@@ -1,3 +1,6 @@
+
+export const ifEmptyUndefinedNull = (str) => str == null || str == undefined || str.length == 0 ? true : false;
+
 export const objPretty = (obj) => {
   return JSON.stringify(obj, undefined, 2);
 };
@@ -11,6 +14,7 @@ export const synopsisFixFormat = (synopsis) => {
   return synopsis;
 }
 
+
 export const synopsisFixLength = (synopsis, len) => {
   if(synopsis.length > len){
     synopsis = synopsis.substring(0, len);
@@ -23,6 +27,7 @@ export const synopsisFixLength = (synopsis, len) => {
 
   return synopsis;
 }
+
 
 export const strSlugify = (str) => {
     str = str.replace(/^\s+|\s+$/g, '');

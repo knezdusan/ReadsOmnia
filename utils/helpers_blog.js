@@ -85,3 +85,7 @@ export const getAllTopicSlugsArr = getAllTopicsArr().map((topic) => getSlugFromT
 
 export const getAllTopicsSlugsCombo = getAllTopicsArr().map((topic) => ([getSlugFromTopic(topic), topic]));
 
+
+// ***** General
+
+export const ifEmptyUndefinedNull = (str) => str == null || str == undefined || str.length == 0 ? true : false;

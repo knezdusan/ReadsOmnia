@@ -5,7 +5,7 @@ import styles from "../../styles/blog/BlogTopics.module.scss";
 export default function BlogTopics({topics}) {
     return (
         <div className={styles.topic_box}>
-          <div className={styles.topic_nav_title}>Main Topics <ArrowDropDown/></div>
+          <div className={styles.topic_nav_title}>Topics <ArrowDropDown/></div>
           <div className={styles.topic_nav_menu}>
             <ul>
                 {

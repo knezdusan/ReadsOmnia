@@ -18,8 +18,10 @@ export default function Home({postsMeta, getAllTopicsSlugsCombo}) {
                 <div className={styles.blog_main_wrapper}>
                     <div className={styles.blog_main_wrapper_inner}>
                         <div className={styles.blog_main_heading}>
-                            <h1>ReadsOmina Blog</h1>
-                            <BlogTopics topics={getAllTopicsSlugsCombo}/>
+                            <div className={styles.blog_heading_top}>
+                                <h1 className={styles.blog_h1}>ReadsOmina Blog</h1>
+                                <BlogTopics topics={getAllTopicsSlugsCombo}/>
+                            </div>
                         </div>
                         <PostsList postsMeta={postsMeta}/>
                     </div>

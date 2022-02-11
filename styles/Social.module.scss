@@ -8,6 +8,10 @@
   color: #a0a0a0;
   margin-left: 10px;
 
+  @media only screen and (max-width: 1275px) {
+    margin-left: 2px;
+  }
+
   .socico{
     cursor: pointer;
     transition: 500ms;

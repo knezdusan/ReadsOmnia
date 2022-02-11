@@ -1,34 +1,34 @@
 .topic_box{
     padding-top: 0;
     padding-right: 0;
-    width: 180px;
     position: relative;
-    background-color: var(--mainbck);
-
-    @media only screen and (max-width: 460px) {
-        width: 140px;
-        font-size: 0.8rem;
-    }
+    display: flex;
+    justify-content: end;
 
     .topic_nav_title{
       display: flex;
       align-items: center;
       justify-content: end;
       cursor: pointer;
-      padding: 0.3rem 0.5rem;
-      padding-bottom: 0.25rem;
+      padding: 0.3rem 0.5rem 0.3rem 1rem;
+
+      @media only screen and (max-width: 460px) {
+        font-size: 0.95rem;
+      }
     }
 
     .topic_nav_menu{
       display: flex;
-      width: inherit;
+      min-width: 160px;
       text-align: right;
       position: absolute;
+      top:30px;
       flex-direction: column;
       font-size: 0.97rem;
       line-height: 1.7rem;
       display: none;
       z-index: 100;
+      background-color: var(--mainbck);
 
       @media only screen and (max-width: 460px) {
         font-size: 0.8rem;
