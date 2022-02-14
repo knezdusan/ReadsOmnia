@@ -9,6 +9,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import Social from "../../components/layout/Social";
+import YouTube from "../../components/blog/YouTube";
 import { getAllPosts, getPostsFromSlug, getSlugs} from "../../utils/helpers_blog";
 import { ifEmptyUndefinedNull } from "../../utils/helpers";
 import styles from "../../styles/blog/PostPage.module.scss";
@@ -45,7 +46,7 @@ export default function PostPage({source, meta, relatedPostsMeta}) {
       setCurUrl(`${baseUrl}${router.asPath}`);
     }, [router.asPath]);
 
-    const components = { Link, Image, }
+    const components = { Link, Image, YouTube,}
 
     let postDate = new Date(meta.date);
     postDate = postDate.toLocaleDateString('en-us', {month:"short", day:"numeric"});    // like May 8

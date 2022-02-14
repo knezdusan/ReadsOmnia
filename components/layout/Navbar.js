@@ -24,7 +24,7 @@ export default function Navbar({isScrolled}) {
     }
   }
 
- 
+
   return (
     <div className={isScrolled ? [styles.navbar, styles.scrolled].join(" ") : styles.navbar}>
       <div className={styles.left}>
@@ -37,6 +37,7 @@ export default function Navbar({isScrolled}) {
           <Link href="/list/critically-acclaimed-bestsellers"><a>Critically Acclaimed</a></Link>
           <Link href="/list/new-fiction-bestsellers"><a>Recently Added</a></Link>
           <Link href="/list/all-time-bestsellers"><a>All-Timers</a></Link>
+          <Link href="/blog/"><a>Blog</a></Link>
 
           <Close className={styles.close_menu} onClick={hamburgerClick}/>
         </div>
