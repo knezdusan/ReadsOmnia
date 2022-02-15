@@ -3,12 +3,12 @@
     padding-right: 0;
     position: relative;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 
     .topic_nav_title{
       display: flex;
       align-items: center;
-      justify-content: end;
+      justify-content: flex-end;
       cursor: pointer;
       padding: 0.3rem 0.5rem 0.3rem 1rem;
 

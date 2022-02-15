@@ -23,7 +23,7 @@ export default function PostsList({postsMeta}) {
                                     alt={postMeta.meta_title}
                                     layout="responsive"
                                     width={850}
-                                    height={370}
+                                    height={400}
                                 />
                                 <div className={styles.post_list_item_data}>
                                     <h2 className={styles.post_list_item_title}>{postMeta.title}</h2>

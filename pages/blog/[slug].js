@@ -94,7 +94,7 @@ export default function PostPage({source, meta, relatedPostsMeta}) {
                             alt={metaTitle}
                             layout="responsive"
                             width={850}
-                            height={370}
+                            height={400}
                         />
                         <div className={styles.post_heading}>
                             <div className={styles.post_meta}><span className={styles.post_meta_links}><Link href="/blog/"><a className={styles.post_meta_home}>ReadsOmnia blog ›</a></Link> <Link href={`/blog/topic/${topicSlug}`}><a className={styles.post_meta_topic}>{postTopic} ›</a></Link></span> {postDate}, from <span>{meta.author}</span> </div>
