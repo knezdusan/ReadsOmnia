@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
+import axios from "axios";
 import { useRouter } from 'next/router';
 import { useState, useEffect } from "react";
 import RelatedPosts from "../../components/blog/RelatedPosts";
@@ -10,6 +11,7 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import Social from "../../components/layout/Social";
 import YouTube from "../../components/blog/YouTube";
+import BookBlock from "../../components/blog/BookBlock";
 import { getAllPosts, getPostsFromSlug, getSlugs} from "../../utils/helpers_blog";
 import { ifEmptyUndefinedNull } from "../../utils/helpers";
 import styles from "../../styles/blog/PostPage.module.scss";
@@ -33,7 +35,7 @@ import styles from "../../styles/blog/PostPage.module.scss";
 */
 
 
-export default function PostPage({source, meta, relatedPostsMeta}) {
+export default function PostPage({source, meta, relatedPostsMeta, postBooksData}) {
 
     const router = useRouter();
     const [curUrl, setCurUrl] = useState("");
@@ -46,7 +48,7 @@ export default function PostPage({source, meta, relatedPostsMeta}) {
       setCurUrl(`${baseUrl}${router.asPath}`);
     }, [router.asPath]);
 
-    const components = { Link, Image, YouTube,}
+    const components = { Link, Image, YouTube, BookBlock, }
 
     let postDate = new Date(meta.date);
     postDate = postDate.toLocaleDateString('en-us', {month:"short", day:"numeric"});    // like May 8
@@ -103,7 +105,7 @@ export default function PostPage({source, meta, relatedPostsMeta}) {
                         </div>
 
                         <div className={styles.post_body}>
-                            <MDXRemote {...source} components={components} />
+                            <MDXRemote {...source} components={components} scope={postBooksData}/>
                         </div>
 
                         { meta.related.length > 0 ? <RelatedPosts relatedPosts={relatedPostsMeta}/> : null }
@@ -143,11 +145,33 @@ export const getStaticProps = async ({params}) => {
     // Related posts:
     const relatedPostsMeta = getAllPosts().filter((post) => meta.related.includes(post.meta.slug) ).map((post) => post.meta);
 
+    // Blogpost books:
+    let postBooksData = "";
+
+    if(!ifEmptyUndefinedNull(meta.books)){
+        const blogpostBooks = meta.books        // like: '0060530626-014118499X-0061233846-0385738722'
+        const apiSlug = "bpbooks_"+blogpostBooks; // like: 'bpbooks_0060530626-014118499X-0061233846-0385738722'
+
+        const { data } = await axios.get(
+          process.env.RO_API_URL + apiSlug,
+          {
+            headers: {
+              'Authorization': `${process.env.RO_API_KEY}`
+            },
+            timeout: 30000, // 30s
+          }
+        )
+
+        postBooksData = data;
+    }
+
+
     return {
         props:{
             source: mdxSource,
             meta,
             relatedPostsMeta,
+            postBooksData,
         }
     }
 }

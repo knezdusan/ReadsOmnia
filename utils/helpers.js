@@ -101,3 +101,26 @@ export const cleanHtml = (html, tagsToLeaveArray) => {
 
   return htmlClean;
 };
+
+
+// Genres
+export const genreArray = {
+  "Literature & Fiction": "literature-fiction",
+  "Children's Books": "children",
+  "Mystery, Thriller & Suspense": "mystery-thriller-suspense",
+  "Teen & Young Adult": "teen-young-adult",
+  "Politics & Social Sciences": "politics-social-science",
+  "Biographies & Memoirs": "biographies-memoirs",
+  "Christian Books & Bibles": "christian-bibles",
+  "Comics & Graphic Novels": "comics-graphic-novels",
+  "Science Fiction & Fantasy": "science-fiction-fantasy",
+  "Cookbooks, Food & Wine": "cookbooks-food-wine",
+  "History": "history",
+  "Humor & Entertainment": "humor-entertainment",
+  "Business & Money": "business-money",
+  "Arts & Photography": "arts-photography",
+  "Self-Help": "self-help",
+  "LGBTQ+ Books": "lgbtq",
+  "Health, Fitness & Dieting": "health-fitness-dieting",
+  "Romance": "romance",
+};

@@ -1,0 +1,86 @@
+.book_box{
+  border:1px solid #0d0d0d;
+  display: flex;
+
+  @media only screen and (max-width: 800px) {
+    flex-direction: column;
+  }
+
+  .book_item_cover {
+    position: relative;
+    min-width: 250px;
+    max-width: 250px;
+    height: 375px;
+    margin: auto;
+
+    img{
+      outline: 2px solid #000000;
+      outline-offset: -2px;
+    }
+  }
+
+  .book_item_info{
+    padding: 0.5rem 1rem;
+
+    .book_item_info_top{
+      display: flex;
+      justify-content: space-between;
+
+      @media only screen and (max-width: 800px) {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .book_item_genre{
+        font-size: 0.9rem;
+
+        @media only screen and (max-width: 800px) {
+          text-align: center;
+        }
+      }
+
+      .book_item_rating{
+        position: relative;
+        bottom: 5px;
+        left: 5px;
+        min-width: 95px;
+
+        svg{
+          font-size: 19px;
+        }
+
+      }
+    }
+
+    h3{
+      font-family: 'Special Elite', cursive;
+      font-weight: 300;
+      line-height: 2.5rem;
+      margin: 0;
+      padding-top: 1rem;
+    }
+
+    .book_item_authors{
+      font-size: 0.9rem;
+    }
+
+    .book_item_synopsys{
+      font-size: 1.05rem;
+      line-height: 1.7rem;
+      padding: 1.5rem 0;
+    }
+
+    .book_item_info_down{
+      .info_button{
+        display: flex;
+        align-items: center;
+        margin: auto;
+        padding: 0 3rem;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    }
+
+  }
+
+}

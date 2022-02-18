@@ -6,6 +6,10 @@
     background-position: center center;
     background-size: cover;
 
+    a{
+        cursor: pointer;
+    }
+
     .posts_wrapper{
         display: flex;
         justify-content: center;
@@ -102,6 +106,13 @@
                     }
                 }
 
+                h3{
+                    a{
+                        color:white !important;
+                        cursor: default;
+                    }
+                }
+
                 p{
                     margin-bottom: 2rem;
                 }
@@ -177,17 +188,34 @@
                     list-style: none;
 
                     li{
-                        display: block;
+                        display: flex;
+                        align-items: center;
                         padding-bottom: 1.5rem;
-                        padding-left: 1.5rem;
+                        padding-left: 0.5rem;
                         line-height: 1.8rem;
+
+                        @media only screen and (max-width: 800px) {
+                            flex-direction: column;
+                        }
+
+                        a{
+                            cursor: pointer;
+                            margin-right: 0.5rem;
+
+                            h3{
+                                margin: 0;
+                            }
+                        }
                     }
 
                     & li::before {
                         content: "o";
-                        color: #959595;
+                        font-family: 'Special Elite', cursive;
+                        font-size: 2rem;
+                        color: #e79c37;
                         font-weight: bold;
                         padding-right: 0.5rem;
+                        padding-top: 0.2rem;
                     }
                 }
 

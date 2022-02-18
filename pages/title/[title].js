@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import { useState, useEffect } from "react";
 import styles from "../../styles/Title.module.scss";
 import axios from "axios";
-import { cleanHtml, strSlugify } from "../../utils/helpers";
+import { cleanHtml, strSlugify, genreArray } from "../../utils/helpers";
 import ShoppingCart from "@material-ui/icons/ShoppingCart";
 import Person from "@material-ui/icons/Person";
 import ArrowBack from "@material-ui/icons/ArrowBack";
@@ -58,20 +58,20 @@ export default function Title({bookData}) {
       month: 'short',
       year: 'numeric'
   };
-  
+
   const published = d.toLocaleDateString('en-ZA', options);
 
   // Authors block
   let authorsBox;
   let authorNamesArray;
   let authorNamesString; // like John Dow, Will Grace..
-  
+
   if(authorsArray.length > 0){
     authorsBox = authorsArray.map((authorObj) => {
       const authorName = authorObj.author;
       const authorImgSrc = `https://res.cloudinary.com/readsomnia/image/upload/authors/a_${authorObj.amid}.jpg`;
       const authorAmazonUrl = `https://www.amazon.com${authorObj.url}${authorObj.amid}`
-  
+
       return (
         <div className={styles.author_box} key={authorObj.aid}>
           <Link href={authorAmazonUrl}>
@@ -124,7 +124,7 @@ export default function Title({bookData}) {
   // Readers reviews
   let reviewsBox;
   let reviewer = "";
-  
+
   if(reviewsArray.length > 0){
     reviewsBox = reviewsArray.map((reviewObj) => {
       const rwId = reviewObj.rid;
@@ -137,20 +137,20 @@ export default function Title({bookData}) {
         if(reviewer != ""){
           rwName = rwName.replace(reviewer, "");
         }
-  
+
         reviewer = rwName + reviewer;
-  
+
         rwName = rwName.replace(/Amazon/g," ");
         rwName = rwName.replace(/Customer/g," ");
         if(rwName.length > 20){
           rwName = rwName.substring(0,20);
         }
-      
-  
+
+
         let iconPersonStyles = {
           // border: '2px solid green',
         }
-  
+
         return (
           <div className={styles.review_box} key={reviewObj.rid}>
               <div className={styles.review_heading}>
@@ -227,7 +227,7 @@ export default function Title({bookData}) {
 
       const rCoverUrlSrc = `https://res.cloudinary.com/readsomnia/image/upload/covers/c_${rlIsbn}.jpg`;
       const rCoverBlurUrlSrc = `https://res.cloudinary.com/readsomnia/image/upload/covers/blur/c_${rlIsbn}.jpg`;
-      
+
       return (
         <Link href={rlBookUrl} key={relatedObj.bid}>
           <a className={styles.rl_book_cover}>
@@ -306,29 +306,6 @@ export default function Title({bookData}) {
     metaDescription += `.. readsOmnia`;
   }
 
-  // Genre link if exists in the categorySlug array meaning we hae a dedicated genre page
-  const genrePageArray = {
-    "Literature & Fiction": "literature-fiction",
-    "Children's Books": "children",
-    "Mystery, Thriller & Suspense": "mystery-thriller-suspense",
-    "Teen & Young Adult": "teen-young-adult",
-    "Politics & Social Sciences": "politics-social-science",
-    "Biographies & Memoirs": "biographies-memoirs",
-    "Christian Books & Bibles": "christian-bibles",
-    "Comics & Graphic Novels": "comics-graphic-novels",
-    "Science Fiction & Fantasy": "science-fiction-fantasy",
-    "Cookbooks, Food & Wine": "cookbooks-food-wine",
-    "History": "history",
-    "Humor & Entertainment": "humor-entertainment",
-    "Business & Money": "business-money",
-    "Arts & Photography": "arts-photography",
-    "Self-Help": "self-help",
-    "LGBTQ+ Books": "lgbtq",
-    "Health, Fitness & Dieting": "health-fitness-dieting",
-    "Romance": "romance",
-  };
-
-
   return (
     <>
       <Head>
@@ -353,9 +330,9 @@ export default function Title({bookData}) {
         <meta property='og:image' content={coverUrlSrc} />
 
       </Head>
-      
+
       <div className={styles.main_content}>
-  
+
         {/* <div className={styles.top_space}> </div> */}
         <div className={styles.main_box_wrapper}>
 
@@ -367,7 +344,7 @@ export default function Title({bookData}) {
                 </div>
                 <div className = {styles.title_rating}><Rating rating={mainData.rating}/></div>
                 <div className = {styles.title_genres}>
-                    <div>{mainData.category in genrePageArray ? <Link href={`/genre/${genrePageArray[mainData.category]}`}><a>{mainData.category}</a></Link> : mainData.Category}</div>
+                    <div>{mainData.category in genreArray ? <Link href={`/genre/${genreArray[mainData.category]}`}><a>{mainData.category}</a></Link> : mainData.category}</div>
                     <div>{mainData.genre}</div>
                 </div>
                 <div className={styles.title_details}>
